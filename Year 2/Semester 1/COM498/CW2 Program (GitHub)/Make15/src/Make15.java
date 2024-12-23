@@ -22,10 +22,13 @@ public class Make15 {
       }
    }
 
-   // Method to display the player's hand and the computer's card
-   public static void displayHandAndCard(List hand, Card computerCard, String type) {
+   // Method to display the player's hand, the computer's card and the current score for the round
+   public static void displayRound(List hand, Card computerCard, int score) {
       // TEMP FOR TESTING
-      System.out.println("\n**Display Type: " + type);
+      //System.out.println("\n**Display Type: " + type);
+
+      // Output current player score
+      System.out.println("\n\n[  Current score:  " + score + "  ]\n");
 
       // Output current (randomised) player hand
       System.out.println("\nYour Hand:\t\t\t\t" + hand);
@@ -36,7 +39,11 @@ public class Make15 {
 
    public void play() {
 
-      while (true) {
+      // Flag used to determine end of game - necessary as (in certain areas) a break only exits inner loop, and return terminates the whole program
+      boolean GAMEOVER = false;
+
+      // WHILE NOT GAMEOVER - while the game isn't over
+      while (!GAMEOVER) {
          // Checks if the deck or player's hand is empty before continuing
          if (deck.isEmpty()) {
             System.out.println("\nThe deck is empty. GAME OVER!");
@@ -48,7 +55,8 @@ public class Make15 {
          }
 
          Card comCard = deck.dealCard(); // Creating computer's (opponent's) card
-         displayHandAndCard(playerHand, comCard, "1 - WHILE true loop");
+         displayRound(playerHand, comCard, score);
+         //displayRound(playerHand, comCard, "1 - WHILE !GAMEOVER loop");
 
          boolean validMove = false;
          while (!validMove) {
@@ -90,20 +98,23 @@ public class Make15 {
                // Invalid move
                else if (!validMovesLeft(comCard)) { // Checks IF another move is possible
                   System.out.println("\nInvalid move. No valid moves left. GAME OVER!");
-                  break;
+                  GAMEOVER = true; // Exit outer loop ("while (!GAMEOVER)")
+                  break; // Exit inner loop ("while (!validMove)")
                }
                // Move is possible - prompts to try again
                else {
                   System.out.println("\nInvalid move. Try again.");
 
-                  displayHandAndCard(playerHand, comCard, "2 - Invalid move");
+                  displayRound(playerHand, comCard, score);
+                  //displayRound(playerHand, comCard, "2 - Invalid move");
                }
             }
             // Invalid choice
             else {
                System.out.println("\nInvalid choice: Your input must be between 1-" + playerHand.size() + ".");
 
-               displayHandAndCard(playerHand, comCard, "3 - Invalid choice");
+               displayRound(playerHand, comCard, score);
+               //displayRound(playerHand, comCard, "3 - Invalid choice");
             }
          }
       }
