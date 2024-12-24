@@ -58,19 +58,47 @@ public class Make15 {
          displayRound(playerHand, comCard, score);
          //displayRound(playerHand, comCard, "1 - WHILE !GAMEOVER loop");
 
+         int choice; // Choice variable - defined outside loop to allow access
+
          boolean validMove = false;
+         // WHILE NOT a valid move, keep looping
          while (!validMove) {
             System.out.println("\n==================================");
             System.out.print("Choose a card to play (1 to " + playerHand.size() + "): ");
-            int choice = input.nextInt() - 1;
+            String choiceInput = input.nextLine();
+
+            // Try/Catch to ensure correct format is entered (i.e., no letters, special characters etc.)
+            try {
+               choice = Integer.parseInt(choiceInput) - 1;
+            }
+            catch (NumberFormatException e) {
+               System.out.println("\nInvalid choice. Try again. (Try/Catch)");
+               displayRound(playerHand, comCard, score);
+
+               continue; // Allows program to continue after error handling
+            }
 
             // Check IF choice is between 1-5
             if (choice >= 0 && choice < playerHand.size()) {
-               // Get card at choice position
-               Card chosenCard = playerHand.get(choice);
+
+               Card chosenCard = playerHand.get(choice); // Get card at choice position
+
+               // **FIX THIS
+               for (Card card : playerHand) {
+                  if (card.getRankValue() + comCard.getRankValue() == 15) {
+                     // After checking if 15 can be made, check IF picture card is played (picture cards in this case are: Jacks, Kings, Queens - not Aces)
+                     if (chosenCard.getRank().equals("Jack") ||
+                           chosenCard.getRank().equals("King") ||
+                           chosenCard.getRank().equals("Queen")) {
+
+                        System.out.println("\nYou have chosen to play a picture card.");
+                        playerHand.set(choice, deck.dealCard()); // Replace existing picture card
+                     }
+                  }
+               }
 
                // Check IF chosen card value and computer's card value equal 15
-               if (chosenCard.getRankValue() + comCard.getRankValue() == 15) {
+               if (makes15(chosenCard, comCard)) {
                   System.out.println("\nYOU MADE 15! +1 POINT scored.");
                   score++;
 
@@ -137,11 +165,13 @@ public class Make15 {
       return false;
    }
 
+   // Method to check if choice makes 15
    private boolean makes15(Card playerCard, Card computerCard) {
-      // Return TRUE IF the rank value of both player and computer cards add up to 15 OR IF the player card suit is equal to the computer's card suit
-      return playerCard.getRankValue() + computerCard.getRankValue() == 15 || playerCard.getSuit().equals(computerCard.getSuit());
+      // Return TRUE IF the rank value of both player and computer cards add up to 15
+      return playerCard.getRankValue() + computerCard.getRankValue() == 15;
    }
 
+   ///
 
    public static void main(String[] args) {
 
