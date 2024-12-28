@@ -1,25 +1,28 @@
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 import java.util.Scanner;
+
+/*
+Coursework 2 - Make 15 Game program
+By Andrew McCormick (B00988875)
+ */
+
 
 /*
 Current issues:
 
-- No option for 'No'/N when choosing if you'd like to replace a picture card after making 15.
-- If choice card is the same as replacement card, the program gives option to replace card,
-  even though it should already be replaced and should ignore the replacement section of code.
-   - Alternatively, if I change the code to fix this, it causes a different issue where, it will constantly deal a new card everytime the input is invalid - also not what I want!
+- No issues ATM - need to start implementing replay function
+
  */
 
 public class Make15 {
 
-   // Initialise deck, card hand and score variables
+   // Initialise deck, card hand and score variables, along with an array list for storing high scores
    private List<Card> playerHand = new ArrayList<>();
+   private static List<Score> highScores = new ArrayList<>();
    private Deck deck = new Deck();
    private int score = 0;
 
-   Random random = new Random(); // For random number/value generation
    Scanner input = new Scanner(System.in); // For receiving input from user
 
    // Main game class constructor
@@ -33,9 +36,6 @@ public class Make15 {
 
    // Method to display the player's hand, the computer's card and the current score for the round
    public static void displayRound(List hand, Card computerCard, int score) {
-      // TEMP FOR TESTING
-      //System.out.println("\n**Display Type: " + type);
-
       // Output current player score
       System.out.println("\n\n[  Current score:  " + score + "  ]\n");
 
@@ -62,9 +62,79 @@ public class Make15 {
       return playerCard.getRankValue() + computerCard.getRankValue() == 15;
    }
 
+   // Selection sort method to sort high scores in descending order
+   private void selectionSort() {
+      for (int i = 0; i < highScores.size() - 1; i++) {
+         int maxIndex = i;
+         for (int j = i + 1; j < highScores.size(); j++) {
+            if (highScores.get(j).getScore() > highScores.get(maxIndex).getScore()) {
+               maxIndex = j;
+            }
+         }
+
+         // Swap max score found with the first unsorted position
+         Score temp = highScores.get(maxIndex);
+         highScores.set(maxIndex, highScores.get(i));
+         highScores.set(i, temp);
+      }
+   }
+
+   // Method for displaying ordered high score table
+   private static void displayHighScores() {
+      System.out.println("\n------ High Scores ------");
+
+      if (highScores.isEmpty()) {
+         System.out.println("\nNo high scores available.\n");
+      }
+      else {
+         for (int i = 0; i < highScores.size(); i++) {
+            System.out.println((i + 1) + ". " + highScores.get(i));
+         }
+      }
+
+      System.out.println("-------------------------");
+   }
+
+   // Method to check if a score qualifies for high score table
+   private void checkHighScore() {
+      // IF there's less than 5 high scores OR player's score is higher than the lowest score in table
+      if (score > 0 && (highScores.size() < 5 || score > highScores.get(highScores.size() - 1).getScore())) {
+         System.out.println("\nCongrats! You have made it to the High Scores Table!");
+
+         String playerName;
+         while (true) {
+            System.out.println("\n===================");
+            System.out.print("Enter your name: ");
+
+            playerName = input.nextLine().trim();
+            if (playerName.length() >= 3 && playerName.length() <= 15) {
+               break; // Exit loop if name is valid num of chars
+            }
+            else {
+               System.out.println("\nInvalid name. Please enter a name between 3 and 15 characters.");
+            }
+         }
+
+         // Create new score
+         Score newScore = new Score(playerName, score);
+         highScores.add(newScore);
+         selectionSort(); // Selection sort to sort high scores in descending order
+
+         // IF the list length is greater than 5, remove the lowest score
+         if (highScores.size() > 5) {
+            highScores.remove(highScores.size() - 1);
+         }
+
+         System.out.println("\n** New High Score for '" + playerName + "' added! **"); // Output message for new high scorer
+      }
+      else {
+         System.out.println("\nUnfortunately, you have not qualified for the High Score Table. Better luck next time!");
+      }
+   }
+
+
    // Method for starting a new game
    public void play() {
-
       // Flag used to determine end of game - necessary as (in certain areas) a break only exits inner loop, and return terminates the whole program
       boolean GAMEOVER = false;
 
@@ -118,15 +188,22 @@ public class Make15 {
                   List<Integer> pictureCardPositions = new ArrayList<>();
                   for (int i = 0; i < playerHand.size(); i++) {
                      Card card = playerHand.get(i);
-                     if (card != null && (card.getRank().equals("Jack")) || card.getRank().equals("King") || card.getRank().equals("Queen")) {
+                     if (card != null && (card.getRank().equals("Jack") || card.getRank().equals("King") || card.getRank().equals("Queen"))) {
                         pictureCardPositions.add(i);
                         pictureCardsFound = true;
                      }
                   }
 
-                  if (pictureCardsFound) {
+                  // Deal new card at choice position AFTER checking the current round's cards
+                  if (deck.isEmpty()) {
+                     playerHand.set(choice, null);
+                  }
+                  else {
+                     playerHand.set(choice, deck.dealCard());
+                  }
 
-                     // IF there are picture cards, prompt player with option to replace one with another from the deck (Level 5)
+                  // IF there are picture cards, prompt player with option to replace one with another from the deck (Level 5)
+                  if (pictureCardsFound && !(chosenCard.getRank().equals("Jack") || chosenCard.getRank().equals("King") || chosenCard.getRank().equals("Queen"))) {
                      boolean validResponse = false;
                      while (!validResponse) {
                         System.out.println("\nYou have the following picture cards in your hand:\n");
@@ -134,6 +211,8 @@ public class Make15 {
                         for (int position : pictureCardPositions) {
                            System.out.println((position + 1) + " - " + playerHand.get(position));
                         }
+
+                        System.out.println("\nType 'no' or 'n' to decline a replacement card and continue as normal.");
 
                         int[] availablePositionsArr = new int[pictureCardPositions.size()];
                         String availablePositions = "";
@@ -148,14 +227,19 @@ public class Make15 {
                         System.out.println("\n==============================================================================================");
                         System.out.print("Would you like to replace one of the current picture cards in your hand? If so, which card? ");
                         String responseInput = input.nextLine();
+                        int response = -1;
 
-                        int response;
-                        try {
-                           response = Integer.parseInt(responseInput); // Tries to parse String input to int
+                        if (responseInput.equals("no") || responseInput.equals("n")) {
+                           validResponse = true;
                         }
-                        catch (NumberFormatException e) { // Catches any attempt to convert a String with an incorrect format to an integer or a double
-                           System.out.println("\nInvalid choice."); // Outputs 'Invalid choice' message
-                           continue;
+                        else {
+                           try {
+                              response = Integer.parseInt(responseInput); // Tries to parse String input to int
+                           }
+                           catch (NumberFormatException e) { // Catches any attempt to convert a String with an incorrect format to an integer or a double
+                              System.out.println("\nInvalid choice."); // Outputs 'Invalid choice' message
+                              continue;
+                           }
                         }
 
                         // Search for position in the array
@@ -216,7 +300,7 @@ public class Make15 {
                   GAMEOVER = true; // Exit outer loop ("while (!GAMEOVER)")
                   break; // Exit inner loop ("while (!validMove)")
                }
-               // Move is possible - prompts to try again
+               // Move is possible - prompts to try again (NOTE: not entirely sure if this is the intended way it should work at this point in the code)
                else {
                   System.out.println("\nInvalid move. Try again.");
 
@@ -235,7 +319,13 @@ public class Make15 {
       // Output the final score once no moves are available to the player
       System.out.println("\n---------------------------------");
       System.out.println("|  Final score:\t\t\t" + score + "\t\t|");
-      System.out.println("---------------------------------\n\n");
+      System.out.println("---------------------------------");
+
+      // IF GAMEOVER = true, check if player made a high score
+      if (GAMEOVER) {
+         checkHighScore();
+         displayHighScores();
+      }
    }
 
    ///
@@ -261,7 +351,7 @@ public class Make15 {
          System.out.print("Enter your choice: "); // Prompts user for choice
          String mainMenuChoiceInput = input.nextLine(); // Takes in input as String and gives it a separate variable
 
-         System.out.println(); // Outputs space (used here instead of constant '\n' for consistency)
+         System.out.println();
 
          try {
             mainMenuChoice = Integer.parseInt(mainMenuChoiceInput); // Tries to parse String input to int
@@ -287,6 +377,9 @@ public class Make15 {
                // Create new game
                Make15 game = new Make15();
 
+               // Display high scores before new game starts
+               displayHighScores();
+
                // Call method to play game
                game.play();
 
@@ -294,7 +387,7 @@ public class Make15 {
 
             // Option 2 - High Score Table
             case 2:
-               //**TBD
+               displayHighScores();
 
                break;
 
@@ -320,7 +413,7 @@ public class Make15 {
                System.out.println("Exiting...");
                System.exit(0); // Uses code 0 to indicate a normal program termination
 
-               break; // Breaks out of program
+               break; // Breaks out of program (System.exit should terminate the program before it reaches this point anyway)
          } // Main Menu switch
 
       } // while
