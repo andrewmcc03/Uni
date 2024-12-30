@@ -167,7 +167,7 @@ public class Make15 {
                choice = Integer.parseInt(choiceInput) - 1; // NOTE: -1 here is better for using the choice for getting index position later on - this is not a mistake for this instance
             }
             catch (NumberFormatException e) {
-               System.out.println("\nInvalid choice. Try again.");
+               System.out.println("\nInvalid choice: Your input must be between 1-" + playerHand.size() + ".");
                displayRound(playerHand, comCard, score);
 
                continue; // Allows program to continue after error handling
@@ -183,16 +183,17 @@ public class Make15 {
                   System.out.println("\nYOU MADE 15! +1 POINT scored.");
                   score++;
 
-                  // Checking for picture cards and adding to new list
-                  boolean pictureCardsFound = false;
+                  // Checking for picture cards in current hand and adding to new list
                   List<Integer> pictureCardPositions = new ArrayList<>();
                   for (int i = 0; i < playerHand.size(); i++) {
-                     Card card = playerHand.get(i);
-                     if (card != null && (card.getRank().equals("Jack") || card.getRank().equals("King") || card.getRank().equals("Queen"))) {
-                        pictureCardPositions.add(i);
-                        pictureCardsFound = true;
+                     if (i != choice) {
+                        Card card = playerHand.get(i);
+                        if (card != null && (card.getRank().equals("Jack") || card.getRank().equals("King") || card.getRank().equals("Queen"))) {
+                           pictureCardPositions.add(i);
+                        }
                      }
                   }
+                  boolean pictureCardsFound = !pictureCardPositions.isEmpty();
 
                   // Deal new card at choice position AFTER checking the current round's cards
                   if (deck.isEmpty()) {
@@ -203,7 +204,7 @@ public class Make15 {
                   }
 
                   // IF there are picture cards, prompt player with option to replace one with another from the deck (Level 5)
-                  if (pictureCardsFound && !(chosenCard.getRank().equals("Jack") || chosenCard.getRank().equals("King") || chosenCard.getRank().equals("Queen"))) {
+                  if (pictureCardsFound) {
                      boolean validResponse = false;
                      while (!validResponse) {
                         System.out.println("\nYou have the following picture cards in your hand:\n");
@@ -226,7 +227,7 @@ public class Make15 {
 
                         System.out.println("\n==============================================================================================");
                         System.out.print("Would you like to replace one of the current picture cards in your hand? If so, which card? ");
-                        String responseInput = input.nextLine();
+                        String responseInput = input.nextLine().toLowerCase();
                         int response = -1;
 
                         if (responseInput.equals("no") || responseInput.equals("n")) {

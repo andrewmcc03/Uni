@@ -18,7 +18,7 @@ public class Score implements Comparable<Score> {
 
    @Override
    public String toString() {
-      return name + ": " + score;
+      return name + ":\t\t" + score;
    }
 
    @Override
