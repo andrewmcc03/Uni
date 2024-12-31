@@ -143,10 +143,10 @@ public class Make15 {
    private void displayReplay() {
       // Check if there's a name present (needs high score for this to be true)
       if (playerName == null) {
-         System.out.print("\n\n------- GAME REPLAY -------");
+         System.out.print("\033[1m\u001B[4m\n\n = = = = = = GAME REPLAY = = = = = = \u001B[0m\033[0m");
       }
       else {
-         System.out.print("\n\n------- GAME REPLAY for '" + playerName + "' -------");
+         System.out.print("\033[1m\u001B[4m\n\n= = = = GAME REPLAY for '" + playerName + "' = = = =\u001B[0m\033[0m");
       }
 
       // FOR each entry in the game log
@@ -168,7 +168,8 @@ public class Make15 {
       while (!GAMEOVER) {
 
          // REPLAY FUNCTION: Round counter
-         gameLog.add("\n\n--- Round " + round++ + " ---");
+         String roundHeader = String.format("\n\n%-14s%-7s%-12d%-1s", "----", "Round", round++, "----");
+         gameLog.add(roundHeader);
 
          // Checks if the deck or player's hand is empty before continuing
          if (deck.isEmpty()) {
@@ -243,71 +244,52 @@ public class Make15 {
                   }
 
                   // IF there are picture cards, prompt player with option to replace one with another from the deck (Level 5)
-                  if (pictureCardsFound) {
-                     boolean validResponse = false;
-                     while (!validResponse) {
-                        System.out.println("\nYou have the following picture cards in your hand:\n");
+                  if (pictureCardsFound)
+                  {
+                     System.out.println("\nYou have the following picture cards in your hand:\n");
 
-                        for (int position : pictureCardPositions) {
-                           System.out.println((position + 1) + " - " + playerHand.get(position));
-                        }
+                     // FOR each card in the array of picture cards
+                     for (int position : pictureCardPositions) {
+                        System.out.println((position + 1) + " - " + playerHand.get(position));
+                     }
 
-                        System.out.println("\nType 'no' or 'n' to decline a replacement card and continue as normal.");
+                     // FOR each picture card, ask if player wants to replace card or not
+                     for (int position : pictureCardPositions) {
+                        boolean validResponse = false;
+                        while (!validResponse) {
+                           System.out.println("\n==============================================================================================");
+                           System.out.print("Would you like to replace the picture card '" + playerHand.get(position) + "' (yes/no)? ");
+                           String responseInput = input.nextLine().toLowerCase();
+                           int response = -1;
 
-                        int[] availablePositionsArr = new int[pictureCardPositions.size()];
-                        String availablePositions = "";
-                        for (int i = 0; i < pictureCardPositions.size(); i++) {
-                           if (i > 0) {
-                              availablePositions += ", ";
+                           if (responseInput.equals("no") || responseInput.equals("n")) {
+                              gameLog.add("\nReplacement card DECLINED for card: '" + playerHand.get(position) + "' at position " + (position + 1)); // REPLAY FUNCTION: Replacement Card - Declined
+
+                              validResponse = true;
                            }
-                           availablePositions += (pictureCardPositions.get(i) + 1);
-                           availablePositionsArr[i] = (pictureCardPositions.get(i) + 1);
-                        }
-
-                        System.out.println("\n==============================================================================================");
-                        System.out.print("Would you like to replace one of the current picture cards in your hand? If so, which card? ");
-                        String responseInput = input.nextLine().toLowerCase();
-                        int response = -1;
-
-                        if (responseInput.equals("no") || responseInput.equals("n")) {
-                           gameLog.add("\nReplacement card DECLINED.");
-                           validResponse = true;
-                        }
-                        else {
-                           try {
-                              response = Integer.parseInt(responseInput); // Tries to parse String input to int
-                           }
-                           catch (NumberFormatException e) { // Catches any attempt to convert a String with an incorrect format to an integer or a double
-                              System.out.println("\nInvalid choice."); // Outputs 'Invalid choice' message
-                              continue;
-                           }
-                        }
-
-                        // Search for position in the array
-                        for (int position : availablePositionsArr) {
-                           if (position == response) {
-                              response -= 1; // Move response value back 1 to align with correct index position in array
-                              Card previousCard = playerHand.get(response); // Retrieves card at response position (for output shown further below)
+                           else if (responseInput.equals("yes") || responseInput.equals("y")) {
+                              Card previousCard = playerHand.get(position); // Retrieve card-to-be-replaced before dealing new replacement card in its place - used for output later on
 
                               // Deal new replacement card at position
                               if (deck.isEmpty()) {
-                                 playerHand.set(response, null);
+                                 playerHand.set(position, null);
                               }
                               else {
-                                 playerHand.set(response, deck.dealCard());
+                                 playerHand.set(position, deck.dealCard());
                               }
 
                               System.out.println("\nThe card '" + previousCard + "' has been replaced with a new card from the deck.");
-                              gameLog.add("\nReplacement card ACCEPTED:\t" + "The card '" + previousCard + "' has been replaced with a new card from the deck.");
+
+                              gameLog.add("\nReplacement card ACCEPTED" +
+                                    "\n'" + previousCard + "' REPLACED by '" + playerHand.get(position) + "' at position " + (position + 1)); // REPLAY FUNCTION: Replacement Card - Accepted
 
                               validResponse = true;
-                              break;
                            }
-                        }
 
-                        // IF response is NOT valid
-                        if (!validResponse) {
-                           System.out.println("\nInvalid choice. Please see the list below and choose from the following positions: " + availablePositions);
+                           // IF response is NOT valid
+                           if (!validResponse) {
+                              System.out.println("\nInvalid choice. Please enter either 'yes/y' or 'no/n'.");
+                           }
                         }
                      }
                   }
@@ -393,10 +375,22 @@ public class Make15 {
             if (replayChoice.equals("yes") || replayChoice.equals("y")) {
                // Call method to show replay for the (now ended game)
                displayReplay();
+
+               System.out.print("\033[1m\u001B[4m = = = = =  END OF REPLAY  = = = = = \u001B[0m\033[0m\n\n");
+
                break;
             }
             // ELSE IF answer is no
             else if (replayChoice.equals("no") || replayChoice.equals("n")) {
+               System.out.println("\nReturning to main menu...\n");
+
+               // Sleep for 0.5 seconds
+               try {
+                  Thread.sleep(500);
+               } catch (InterruptedException e) {
+                  e.printStackTrace();
+               }
+
                break;
             }
             // ELSE invalid choice
