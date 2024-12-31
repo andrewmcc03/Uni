@@ -11,22 +11,26 @@ By Andrew McCormick (B00988875)
 /*
 Current issues:
 
-- No issues ATM - need to start implementing replay function
+- Minor issues to fix with the game replay feature - functionally seems sound from several tests
 
  */
 
 public class Make15 {
 
-   // Initialise deck, card hand and score variables, along with an array list for storing high scores
+   // Initialise deck, card hand and score variables, along with an array list for storing high scores and one for storing game logs (i.e., moves, events) for replay function
    private List<Card> playerHand = new ArrayList<>();
    private static List<Score> highScores = new ArrayList<>();
    private Deck deck = new Deck();
    private int score = 0;
+   private String playerName;
+   private List<String> gameLog;
 
    Scanner input = new Scanner(System.in); // For receiving input from user
 
    // Main game class constructor
-   public Make15() {
+   private Make15() {
+      // Initialise gameLog for replay function later
+      gameLog = new ArrayList<>();
 
       // Deal initial 5 cards to player
       for (int i = 0; i < 5; i++) {
@@ -35,7 +39,7 @@ public class Make15 {
    }
 
    // Method to display the player's hand, the computer's card and the current score for the round
-   public static void displayRound(List hand, Card computerCard, int score) {
+   private static void displayRound(List hand, Card computerCard, int score) {
       // Output current player score
       System.out.println("\n\n[  Current score:  " + score + "  ]\n");
 
@@ -81,33 +85,34 @@ public class Make15 {
 
    // Method for displaying ordered high score table
    private static void displayHighScores() {
-      System.out.println("\n------ High Scores ------");
+      System.out.println("\n------- High Scores -------");
 
       if (highScores.isEmpty()) {
          System.out.println("\nNo high scores available.\n");
       }
       else {
          for (int i = 0; i < highScores.size(); i++) {
-            System.out.println((i + 1) + ". " + highScores.get(i));
+            System.out.println((i + 1) + ".  " + highScores.get(i));
          }
       }
 
-      System.out.println("-------------------------");
+      System.out.println("---------------------------");
    }
 
    // Method to check if a score qualifies for high score table
    private void checkHighScore() {
-      // IF there's less than 5 high scores OR player's score is higher than the lowest score in table
+      String name = null;
+      // IF score is greater than 0 (at least 1) AND IF there are less than 5 high scores OR player's score is higher than the lowest score in table
+
       if (score > 0 && (highScores.size() < 5 || score > highScores.get(highScores.size() - 1).getScore())) {
          System.out.println("\nCongrats! You have made it to the High Scores Table!");
 
-         String playerName;
          while (true) {
-            System.out.println("\n===================");
+            System.out.println("\n==================================");
             System.out.print("Enter your name: ");
 
-            playerName = input.nextLine().trim();
-            if (playerName.length() >= 3 && playerName.length() <= 15) {
+            name = input.nextLine().trim();
+            if (name.length() >= 3 && name.length() <= 15) {
                break; // Exit loop if name is valid num of chars
             }
             else {
@@ -116,7 +121,7 @@ public class Make15 {
          }
 
          // Create new score
-         Score newScore = new Score(playerName, score);
+         Score newScore = new Score(name, score);
          highScores.add(newScore);
          selectionSort(); // Selection sort to sort high scores in descending order
 
@@ -125,28 +130,55 @@ public class Make15 {
             highScores.remove(highScores.size() - 1);
          }
 
-         System.out.println("\n** New High Score for '" + playerName + "' added! **"); // Output message for new high scorer
+         System.out.println("\n** New High Score for '" + name + "' added! **"); // Output message for new high scorer
       }
       else {
-         System.out.println("\nUnfortunately, you have not qualified for the High Score Table. Better luck next time!");
+         System.out.println("\nUnfortunately, you have not qualified for the High Score Table. Better luck next time!"); // NOTE: To qualify, player must achieve at least a score of 1
       }
+
+      playerName = name; // Set global playerName to high score name
    }
 
+   // Method for displaying the game replay after a game completes
+   private void displayReplay() {
+      // Check if there's a name present (needs high score for this to be true)
+      if (playerName == null) {
+         System.out.print("\n\n------- GAME REPLAY -------");
+      }
+      else {
+         System.out.print("\n\n------- GAME REPLAY for '" + playerName + "' -------");
+      }
+
+      // FOR each entry in the game log
+      for (String entry : gameLog) {
+         System.out.println(entry + "\n-------------------------------------");
+      }
+
+      System.out.println();
+   }
 
    // Method for starting a new game
-   public void play() {
+   private void play() {
       // Flag used to determine end of game - necessary as (in certain areas) a break only exits inner loop, and return terminates the whole program
       boolean GAMEOVER = false;
+      // Counter for round number
+      int round = 1;
 
       // WHILE NOT GAMEOVER - while the game isn't over
       while (!GAMEOVER) {
+
+         // REPLAY FUNCTION: Round counter
+         gameLog.add("\n\n--- Round " + round++ + " ---");
+
          // Checks if the deck or player's hand is empty before continuing
          if (deck.isEmpty()) {
             System.out.println("\nThe deck is empty. GAME OVER!");
+            gameLog.add("Deck empty - GAME OVER! Final Score: " + score); // REPLAY FUNCTION: Game Over - Deck empty
             break;
          }
          if (playerHand.isEmpty()) {
             System.out.println("\nYour hand is empty. GAME OVER!");
+            gameLog.add("Hand empty - GAME OVER! Final Score: " + score); // REPLAY FUNCTION: Game Over - Hand empty
             break;
          }
 
@@ -182,6 +214,13 @@ public class Make15 {
                if (makes15(chosenCard, comCard)) {
                   System.out.println("\nYOU MADE 15! +1 POINT scored.");
                   score++;
+
+                  // REPLAY FUNCTION: Made 15
+                  gameLog.add("Player's hand:\t\t\t" + playerHand +
+                        "\nComputer's card:\t\t" + comCard +
+                        "\n\nPlayer played:\t\t\t" + chosenCard +
+                        "\n\n_____________________________________" +
+                        "\nOutcome:\t\tMade 15! +1 point");
 
                   // Checking for picture cards in current hand and adding to new list
                   List<Integer> pictureCardPositions = new ArrayList<>();
@@ -231,6 +270,7 @@ public class Make15 {
                         int response = -1;
 
                         if (responseInput.equals("no") || responseInput.equals("n")) {
+                           gameLog.add("\nReplacement card DECLINED.");
                            validResponse = true;
                         }
                         else {
@@ -258,6 +298,7 @@ public class Make15 {
                               }
 
                               System.out.println("\nThe card '" + previousCard + "' has been replaced with a new card from the deck.");
+                              gameLog.add("\nReplacement card ACCEPTED:\t" + "The card '" + previousCard + "' has been replaced with a new card from the deck.");
 
                               validResponse = true;
                               break;
@@ -286,6 +327,13 @@ public class Make15 {
                else if (chosenCard.getSuit().equals((comCard.getSuit()))) {
                   System.out.println("\nSame suits have been played by both players. NO POINTS scored.");
 
+                  // REPLAY FUNCTION: Same Suits
+                  gameLog.add("Player's hand:\t\t\t" + playerHand +
+                        "\nComputer's card:\t\t" + comCard +
+                        "\n\nPlayer played:\t\t\t" + chosenCard +
+                        "\n\n_____________________________________" +
+                        "\nOutcome:\t\tSame suits. No points");
+
                   if (deck.isEmpty()) {
                      playerHand.set(choice, null);
                   }
@@ -298,14 +346,22 @@ public class Make15 {
                // Invalid move
                else if (!validMovesLeft(comCard)) { // Checks IF another move is possible
                   System.out.println("\nInvalid move. No valid moves left. GAME OVER!");
+
+                  // REPLAY FUNCTION: Game Over - No valid moves left
+                  gameLog.add("No valid moves left. Game over!");
+
                   GAMEOVER = true; // Exit outer loop ("while (!GAMEOVER)")
                   break; // Exit inner loop ("while (!validMove)")
                }
                // Move is possible - prompts to try again (NOTE: not entirely sure if this is the intended way it should work at this point in the code)
                else {
-                  System.out.println("\nInvalid move. Try again.");
+                  System.out.println("\nInvalid move. GAME OVER!");
 
-                  displayRound(playerHand, comCard, score);
+                  // REPLAY FUNCTION: Game Over - Invalid move played
+                  gameLog.add("Invalid move. Game over!");
+
+                  GAMEOVER = true; // Exit outer loop ("while (!GAMEOVER)")
+                  break; // Exit inner loop ("while (!validMove)")
                }
             }
             // Invalid choice
@@ -319,13 +375,35 @@ public class Make15 {
 
       // Output the final score once no moves are available to the player
       System.out.println("\n---------------------------------");
-      System.out.println("|  Final score:\t\t\t" + score + "\t\t|");
-      System.out.println("---------------------------------");
+      System.out.printf("%-3s%-25s%-4d|", "|","Final Score:", score);
+      System.out.println("\n---------------------------------");
 
       // IF GAMEOVER = true, check if player made a high score
       if (GAMEOVER) {
          checkHighScore();
          displayHighScores();
+
+         // WHILE loop for validating user answer
+         while (true) {
+            System.out.println("\n========================================================");
+            System.out.print("Would you like to view a replay of the game (yes/no)? ");
+            String replayChoice = input.nextLine().trim().toLowerCase();
+
+            // IF answer is yes
+            if (replayChoice.equals("yes") || replayChoice.equals("y")) {
+               // Call method to show replay for the (now ended game)
+               displayReplay();
+               break;
+            }
+            // ELSE IF answer is no
+            else if (replayChoice.equals("no") || replayChoice.equals("n")) {
+               break;
+            }
+            // ELSE invalid choice
+            else {
+               System.out.println("\nInvalid choice. Please enter either 'yes/y' or 'no/n'.");
+            }
+         }
       }
    }
 
