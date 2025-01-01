@@ -85,7 +85,7 @@ public class Make15 {
 
    // Method for displaying ordered high score table
    private static void displayHighScores() {
-      System.out.println("\n------- High Scores -------");
+      System.out.println("\n-------\033[1m High Scores \033[0m-------");
 
       if (highScores.isEmpty()) {
          System.out.println("\nNo high scores available.\n");
@@ -103,10 +103,10 @@ public class Make15 {
    private void checkHighScore() {
       String name = null;
       // IF score is greater than 0 (at least 1) AND IF there are less than 5 high scores OR player's score is higher than the lowest score in table
-
       if (score > 0 && (highScores.size() < 5 || score > highScores.get(highScores.size() - 1).getScore())) {
          System.out.println("\nCongrats! You have made it to the High Scores Table!");
 
+         // WHILE loop to validate name is between 3-15 characters
          while (true) {
             System.out.println("\n==================================");
             System.out.print("Enter your name: ");
@@ -130,7 +130,7 @@ public class Make15 {
             highScores.remove(highScores.size() - 1);
          }
 
-         System.out.println("\n** New High Score for '" + name + "' added! **"); // Output message for new high scorer
+         System.out.println("\n** New High Score for '\033[1m" + name + "\033[0m' added! **"); // Output message for new high scorer
       }
       else {
          System.out.println("\nUnfortunately, you have not qualified for the High Score Table. Better luck next time!"); // NOTE: To qualify, player must achieve at least a score of 1
@@ -146,12 +146,12 @@ public class Make15 {
          System.out.print("\033[1m\u001B[4m\n\n = = = = = = GAME REPLAY = = = = = = \u001B[0m\033[0m");
       }
       else {
-         System.out.print("\033[1m\u001B[4m\n\n= = = = GAME REPLAY for '" + playerName + "' = = = =\u001B[0m\033[0m");
+         System.out.print("\033[1m\u001B[4m\n\n= = = = GAME REPLAY for " + playerName + " = = = =\u001B[0m\033[0m");
       }
 
       // FOR each entry in the game log
       for (String entry : gameLog) {
-         System.out.println(entry + "\n-------------------------------------");
+         System.out.println(entry + "\n-------------------------------------------");
       }
 
       System.out.println();
@@ -175,11 +175,13 @@ public class Make15 {
          if (deck.isEmpty()) {
             System.out.println("\nThe deck is empty. GAME OVER!");
             gameLog.add("Deck empty - GAME OVER! Final Score: " + score); // REPLAY FUNCTION: Game Over - Deck empty
+            GAMEOVER = true; // End game, exiting the loop
             break;
          }
          if (playerHand.isEmpty()) {
             System.out.println("\nYour hand is empty. GAME OVER!");
             gameLog.add("Hand empty - GAME OVER! Final Score: " + score); // REPLAY FUNCTION: Game Over - Hand empty
+            GAMEOVER = true; // End game, exiting the loop
             break;
          }
 
@@ -258,12 +260,11 @@ public class Make15 {
                         boolean validResponse = false;
                         while (!validResponse) {
                            System.out.println("\n==============================================================================================");
-                           System.out.print("Would you like to replace the picture card '" + playerHand.get(position) + "' (yes/no)? ");
+                           System.out.print("Would you like to replace the picture card '\033[1m" + playerHand.get(position) + "\033[0m' (yes/no)? ");
                            String responseInput = input.nextLine().toLowerCase();
-                           int response = -1;
 
                            if (responseInput.equals("no") || responseInput.equals("n")) {
-                              gameLog.add("\nReplacement card DECLINED for card: '" + playerHand.get(position) + "' at position " + (position + 1)); // REPLAY FUNCTION: Replacement Card - Declined
+                              gameLog.add("\nReplacement card DECLINED: '\033[1m" + playerHand.get(position) + "\033[0m'"); // REPLAY FUNCTION: Replacement Card - Declined
 
                               validResponse = true;
                            }
@@ -278,10 +279,9 @@ public class Make15 {
                                  playerHand.set(position, deck.dealCard());
                               }
 
-                              System.out.println("\nThe card '" + previousCard + "' has been replaced with a new card from the deck.");
+                              System.out.println("\nThe \033[1m" + previousCard + "\033[0m has been replaced with a new card from the deck.");
 
-                              gameLog.add("\nReplacement card ACCEPTED" +
-                                    "\n'" + previousCard + "' REPLACED by '" + playerHand.get(position) + "' at position " + (position + 1)); // REPLAY FUNCTION: Replacement Card - Accepted
+                              gameLog.add("\nReplacement card ACCEPTED: '\033[1m" + previousCard + "\033[0m' REPLACED by the '\033[1m" + playerHand.get(position) + "\033[0m'"); // REPLAY FUNCTION: Replacement Card - Accepted
 
                               validResponse = true;
                            }
@@ -330,17 +330,17 @@ public class Make15 {
                   System.out.println("\nInvalid move. No valid moves left. GAME OVER!");
 
                   // REPLAY FUNCTION: Game Over - No valid moves left
-                  gameLog.add("No valid moves left. Game over!");
+                  gameLog.add("No valid moves left. GAME OVER!");
 
                   GAMEOVER = true; // Exit outer loop ("while (!GAMEOVER)")
                   break; // Exit inner loop ("while (!validMove)")
                }
-               // Move is possible - prompts to try again (NOTE: not entirely sure if this is the intended way it should work at this point in the code)
+               // Move is possible - prompts to try again (NOTE: not entirely sure if this is the intended way it should work at this point in the code - could change this to allow the player to move again)
                else {
                   System.out.println("\nInvalid move. GAME OVER!");
 
                   // REPLAY FUNCTION: Game Over - Invalid move played
-                  gameLog.add("Invalid move. Game over!");
+                  gameLog.add("Invalid move. GAME OVER!");
 
                   GAMEOVER = true; // Exit outer loop ("while (!GAMEOVER)")
                   break; // Exit inner loop ("while (!validMove)")
@@ -414,7 +414,7 @@ public class Make15 {
       while (mainMenuChoice != 0)
       {
          System.out.println("\n-------------------------------------------");
-         System.out.println("|  =  =  =  Welcome to Make 15!  =  =  =  |");
+         System.out.println("|  =  =  =  \033[1mWelcome to Make 15!\033[0m  =  =  =  |");
          System.out.println("-------------------------------------------");
          System.out.println("1 - Start a New Game");
          System.out.println("2 - High Score Table");
@@ -461,22 +461,24 @@ public class Make15 {
             // Option 2 - High Score Table
             case 2:
                displayHighScores();
+               System.out.println();
 
                break;
 
             // Option 3 - Rules and Info
             case 3:
                System.out.println("\n-------------------------------------------");
-               System.out.println("|          Rules and Information          |");
+               System.out.println("|          \033[1mRules and Information\033[0m          |");
                System.out.println("-------------------------------------------\n");
-               System.out.println("Make 15 is a one-player card game played against the computer.\n" +
-                                  "The game uses a standard shuffled deck of playing cards from which the player is dealt a hand of 5 cards.\n" +
-                                  "In each round of the game, the computer deals a card face-up from the deck and the player attempts to add a card from his hand such that the total rank score of the two cards is 15.\n" +
-                                  "In this game, the rank value of the picture cards (Jack, Queen, and King) is 11 and the value of the Ace is 12.\n" +
-                                  "If the player is successful, a point is scored, and the player’s card is replaced with one dealt from the deck.\n" +
-                                  "If a player can Make 15, they can also opt, in the same turn, to play any picture cards in their hand to exchange them for replacement cards dealt from the deck.\n" +
-                                  "If the player cannot Make 15, they can play a card of the same suit to allow the game to continue, but no point is scored.\n" +
-                                  "The game ends when a player is forced to play a card that does not Make 15 and is not of the same suit or the deck is empty.");
+               System.out.println("\u001B[1mWhat is Make 15?\u001B[0m\n" +
+                                  "- Make 15 is a one-player card game played against the computer.\n" +
+                                  "- The game uses a standard shuffled deck of playing cards from which the player is dealt a hand of 5 cards.\n");
+               System.out.println("\u001B[1mGeneral Information & How to Play\u001B[0m\n" +
+                     "- In this game, the rank value of the picture cards (Jack, Queen, and King) is 11 and the value of the Ace is 12.\n" +
+                     "- If the player is successful, a point is scored, and the player’s card is replaced with one dealt from the deck.\n" +
+                     "- If a player can Make 15, they can also opt, in the same turn, to play any picture cards in their hand to exchange them for replacement cards dealt from the deck.\n" +
+                     "- If the player cannot Make 15, they can play a card of the same suit to allow the game to continue, but no point is scored.\n" +
+                     "- The game ends when a player is forced to play a card that does not Make 15 and is not of the same suit or the deck is empty.");
                System.out.println("\n-------------------------------------------\n");
 
                break;

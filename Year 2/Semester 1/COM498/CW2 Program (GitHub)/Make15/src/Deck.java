@@ -3,6 +3,7 @@ import java.util.List;
 import java.util.Random;
 
 public class Deck {
+   // List for storing deck of cards
    private List<Card> cards;
 
    // Deck constructor
@@ -22,10 +23,11 @@ public class Deck {
          }
       }
 
-      // Shuffle the created deck before dealing
+      // Shuffle created deck before dealing
       shuffle();
    }
 
+   // Method to deal a new card for both player's hand and computer's card
    public Card dealCard() {
       if (!cards.isEmpty()) {
          return cards.remove(cards.size() - 1);
@@ -33,6 +35,7 @@ public class Deck {
       return null;
    }
 
+   // Method to shuffle the deck in a randomised order
    public void shuffle() {
       Random random = new Random(); // For random number/value generation
 
@@ -44,6 +47,7 @@ public class Deck {
       }
    }
 
+   // Method to check if arrays/lists are or aren't empty
    public boolean isEmpty() {
       return cards.isEmpty();
    }
