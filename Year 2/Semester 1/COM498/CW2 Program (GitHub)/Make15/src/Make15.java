@@ -7,11 +7,10 @@ Coursework 2 - Make 15 Game program
 By Andrew McCormick (B00988875)
  */
 
-
 /*
-Current issues:
+Status:
 
-- Minor issues to fix with the game replay feature - functionally seems sound from several tests
+- Fully working program - may make minor tweaks to output, but other than that, everything L1-L8 is confirmed working and fully functional
 
  */
 
@@ -151,7 +150,7 @@ public class Make15 {
 
       // FOR each entry in the game log
       for (String entry : gameLog) {
-         System.out.println(entry + "\n-------------------------------------------");
+         System.out.println(entry + "\n-------------------------------------");
       }
 
       System.out.println();
@@ -202,7 +201,7 @@ public class Make15 {
                choice = Integer.parseInt(choiceInput) - 1; // NOTE: -1 here is better for using the choice for getting index position later on - this is not a mistake for this instance
             }
             catch (NumberFormatException e) {
-               System.out.println("\nInvalid choice: Your input must be between 1-" + playerHand.size() + ".");
+               System.out.println("\nInvalid choice. Your input must be between 1-" + playerHand.size() + ".");
                displayRound(playerHand, comCard, score);
 
                continue; // Allows program to continue after error handling
@@ -348,55 +347,54 @@ public class Make15 {
             }
             // Invalid choice
             else {
-               System.out.println("\nInvalid choice: Your input must be between 1-" + playerHand.size() + ".");
+               System.out.println("\nInvalid choice. Your input must be between 1-" + playerHand.size() + ".");
 
                displayRound(playerHand, comCard, score);
             }
          } // while (!validMove)
       } // while (!GAMEOVER)
 
+      /// AFTER GAME IS OVER >>>
+
       // Output the final score once no moves are available to the player
       System.out.println("\n---------------------------------");
       System.out.printf("%-3s%-25s%-4d|", "|","Final Score:", score);
       System.out.println("\n---------------------------------");
 
-      // IF GAMEOVER = true, check if player made a high score
-      if (GAMEOVER) {
-         checkHighScore();
-         displayHighScores();
+      checkHighScore();
+      displayHighScores();
 
-         // WHILE loop for validating user answer
-         while (true) {
-            System.out.println("\n========================================================");
-            System.out.print("Would you like to view a replay of the game (yes/no)? ");
-            String replayChoice = input.nextLine().trim().toLowerCase();
+      // WHILE loop for validating user answer
+      while (true) {
+         System.out.println("\n========================================================");
+         System.out.print("Would you like to view a replay of the game (yes/no)? ");
+         String replayChoice = input.nextLine().trim().toLowerCase();
 
-            // IF answer is yes
-            if (replayChoice.equals("yes") || replayChoice.equals("y")) {
-               // Call method to show replay for the (now ended game)
-               displayReplay();
+         // IF answer is yes
+         if (replayChoice.equals("yes") || replayChoice.equals("y")) {
+            // Call method to show replay for the (now ended game)
+            displayReplay();
 
-               System.out.print("\033[1m\u001B[4m = = = = =  END OF REPLAY  = = = = = \u001B[0m\033[0m\n\n");
+            System.out.print("\033[1m\u001B[4m = = = = =  END OF REPLAY  = = = = = \u001B[0m\033[0m\n\n");
 
-               break;
+            break;
+         }
+         // ELSE IF answer is no
+         else if (replayChoice.equals("no") || replayChoice.equals("n")) {
+            System.out.println("\nReturning to main menu...\n");
+
+            // Sleep for 0.5 seconds
+            try {
+               Thread.sleep(500);
+            } catch (InterruptedException e) {
+               e.printStackTrace();
             }
-            // ELSE IF answer is no
-            else if (replayChoice.equals("no") || replayChoice.equals("n")) {
-               System.out.println("\nReturning to main menu...\n");
 
-               // Sleep for 0.5 seconds
-               try {
-                  Thread.sleep(500);
-               } catch (InterruptedException e) {
-                  e.printStackTrace();
-               }
-
-               break;
-            }
-            // ELSE invalid choice
-            else {
-               System.out.println("\nInvalid choice. Please enter either 'yes/y' or 'no/n'.");
-            }
+            break;
+         }
+         // ELSE invalid choice
+         else {
+            System.out.println("\nInvalid choice. Please enter either 'yes/y' or 'no/n'.");
          }
       }
    }
