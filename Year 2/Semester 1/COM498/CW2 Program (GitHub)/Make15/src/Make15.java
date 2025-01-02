@@ -134,6 +134,7 @@ public class Make15 {
 
          System.out.println("\n** New High Score for '\033[1m" + name + "\033[0m' added! **"); // Output message for new high scorer
       }
+      // ELSE - not qualified for high score table entry
       else {
          System.out.println("\nUnfortunately, you have not qualified for the High Score Table. Better luck next time!"); // NOTE: To qualify, player must achieve at least a score of 1
       }
@@ -365,7 +366,10 @@ public class Make15 {
       System.out.println("\n---------------------------------");
 
       checkHighScore();
-      displayHighScores();
+      // Only display high score table IF user achieved a new high score
+      if (score > 0) {
+         displayHighScores();
+      }
 
       // WHILE loop for validating user answer
       while (true) {
@@ -431,12 +435,12 @@ public class Make15 {
             mainMenuChoice = Integer.parseInt(mainMenuChoiceInput); // Tries to parse String input to int
          }
          catch (NumberFormatException e) { // Catches any attempt to convert a String with an incorrect format to an integer or a double
-            System.out.println("Invalid choice."); // Outputs 'Invalid choice' message (catch, main menu)
+            System.out.println("Invalid choice. Please enter a number corresponding with an option from the menu."); // Outputs 'Invalid choice' message (catch, main menu)
             continue;
          }
 
          if (mainMenuChoice < 0 || mainMenuChoice > 3) { // If choice is less than 0 or greater than 3 ...
-            System.out.println("Invalid choice."); // Outputs 'Invalid choice' message (if, main menu)
+            System.out.println("Invalid choice. Your choice must be between 0-3."); // Outputs 'Invalid choice' message (if, main menu)
             continue;
          }
 
@@ -461,6 +465,7 @@ public class Make15 {
 
             // Option 2 - High Score Table
             case 2:
+               // Display high scores
                displayHighScores();
                System.out.println();
 
@@ -475,11 +480,11 @@ public class Make15 {
                                   "- Make 15 is a one-player card game played against the computer.\n" +
                                   "- The game uses a standard shuffled deck of playing cards from which the player is dealt a hand of 5 cards.\n");
                System.out.println("\u001B[1mGeneral Information & How to Play\u001B[0m\n" +
-                     "- In this game, the rank value of the picture cards (Jack, Queen, and King) is 11 and the value of the Ace is 12.\n" +
-                     "- If the player is successful, a point is scored, and the player’s card is replaced with one dealt from the deck.\n" +
-                     "- If a player can Make 15, they can also opt, in the same turn, to play any picture cards in their hand to exchange them for replacement cards dealt from the deck.\n" +
-                     "- If the player cannot Make 15, they can play a card of the same suit to allow the game to continue, but no point is scored.\n" +
-                     "- The game ends when a player is forced to play a card that does not Make 15 and is not of the same suit or the deck is empty.");
+                                  "- In this game, the rank value of the picture cards (Jack, Queen, and King) is 11 and the value of the Ace is 12.\n" +
+                                  "- If the player is successful, a point is scored, and the player’s card is replaced with one dealt from the deck.\n" +
+                                  "- If a player can Make 15, they can also opt, in the same turn, to play any picture cards in their hand to exchange them for replacement cards dealt from the deck.\n" +
+                                  "- If the player cannot Make 15, they can play a card of the same suit to allow the game to continue, but no point is scored.\n" +
+                                  "- The game ends when a player is forced to play a card that does not Make 15 and is not of the same suit or the deck is empty.");
                System.out.println("\n-------------------------------------------\n");
 
                break;
