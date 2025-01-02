@@ -19,18 +19,18 @@ Status:
 
 public class Make15 {
 
-   // Initialise deck, card hand and score variables, along with an array list for storing high scores and one for storing game logs (i.e., moves, events) for replay function
+   // Initialise deck, card hand, score and name variables, along with an array list for storing high scores and one for storing game logs (i.e., moves, events) for replay function
+   private Deck deck = new Deck();
    private List<Card> playerHand = new ArrayList<>();
    private static List<Score> highScores = new ArrayList<>();
-   private Deck deck = new Deck();
-   private int score = 0;
    private String playerName;
+   private int score = 0;
    private List<String> gameLog;
 
    Scanner input = new Scanner(System.in); // For receiving input from user
 
    // Main game class constructor
-   private Make15() {
+   public Make15() {
       // Initialise gameLog for replay function later
       gameLog = new ArrayList<>();
 
@@ -41,7 +41,7 @@ public class Make15 {
    }
 
    // Method to display the player's hand, the computer's card and the current score for the round
-   private static void displayRound(List hand, Card computerCard, int score) {
+   public static void displayRound(List hand, Card computerCard, int score) {
       // Output current player score
       System.out.println("\n\n[  Current score:  " + score + "  ]\n");
 
@@ -86,7 +86,7 @@ public class Make15 {
    }
 
    // Method for displaying ordered high score table
-   private static void displayHighScores() {
+   public static void displayHighScores() {
       System.out.println("\n-------\033[1m High Scores \033[0m-------");
 
       if (highScores.isEmpty()) {
@@ -102,7 +102,7 @@ public class Make15 {
    }
 
    // Method to check if a score qualifies for high score table
-   private void checkHighScore() {
+   public void checkHighScore() {
       String name = null;
       // IF score is greater than 0 (at least 1) AND IF there are less than 5 high scores OR player's score is higher than the lowest score in table
       if (score > 0 && (highScores.size() < 5 || score > highScores.get(highScores.size() - 1).getScore())) {
@@ -143,7 +143,7 @@ public class Make15 {
    }
 
    // Method for displaying the game replay after a game completes
-   private void displayReplay() {
+   public void displayReplay() {
       // Check if there's a name present (needs high score for this to be true)
       if (playerName == null) {
          System.out.print("\033[1m\u001B[4m\n\n = = = = = = GAME REPLAY = = = = = = \u001B[0m\033[0m");
@@ -161,7 +161,7 @@ public class Make15 {
    }
 
    // Method for starting a new game
-   private void play() {
+   public void play() {
       // Flag used to determine end of game - necessary as (in certain areas) a break only exits inner loop, and return terminates the whole program
       boolean GAMEOVER = false;
       // Counter for round number
@@ -365,8 +365,10 @@ public class Make15 {
       System.out.printf("%-3s%-25s%-4d|", "|","Final Score:", score);
       System.out.println("\n---------------------------------");
 
+      // Check if current game score is a high score - enter into high score table if so
       checkHighScore();
-      // Only display high score table IF user achieved a new high score
+
+      // Simple check to only display high score table IF user achieved a new high score
       if (score > 0) {
          displayHighScores();
       }
