@@ -3,7 +3,7 @@ import java.util.List;
 import java.util.Scanner;
 
 /*
-Coursework 2 - Make 15 Game program
+Coursework 2 - 'Make 15 Game' program
 By Andrew McCormick (B00988875)
  */
 
@@ -11,7 +11,7 @@ By Andrew McCormick (B00988875)
 /*
 Status:
 
-- Fully working program - may make minor tweaks to output, but other than that, everything L1-L8 is confirmed working and fully functional
+- Fully working program - minor tweaks can be made to output, but other than that, everything L1-L8 is confirmed working and fully functional
 
  */
 
@@ -116,21 +116,45 @@ public class Make15 {
             name = input.nextLine().trim();
             if (name.length() >= 3 && name.length() <= 15) {
                break; // Exit loop if name is valid num of chars
-            }
-            else {
+            } else {
                System.out.println("\nInvalid name. Please enter a name between 3 and 15 characters.");
             }
          }
 
-         // Create new score
+         // Create new score and add to list
          Score newScore = new Score(name, score);
          highScores.add(newScore);
+
          selectionSort(); // Selection sort to sort high scores in descending order
 
          // IF the list length is greater than 5, remove the lowest score
          if (highScores.size() > 5) {
             highScores.remove(highScores.size() - 1);
          }
+
+         System.out.println("\n** New High Score for '\033[1m" + name + "\033[0m' added! **"); // Output message for new high scorer
+      }
+      // IF score is equal to the lowest score, it should replace the lowest score
+      else if (score > 0 && highScores.size() >= 5 && score == highScores.get(highScores.size() - 1).getScore()) {
+         // WHILE loop to validate name is between 3-15 characters
+         while (true) {
+            System.out.println("\n==================================");
+            System.out.print("Enter your name: ");
+
+            name = input.nextLine().trim();
+            if (name.length() >= 3 && name.length() <= 15) {
+               break; // Exit loop if name is valid num of chars
+            }
+            else {
+               System.out.println("\nInvalid name. Please enter a name between 3-15 characters.");
+            }
+         }
+
+         // Create new score and replace the lowest score in the list with the new score
+         Score newScore = new Score(name, score);
+         highScores.set(highScores.size() - 1, newScore);
+
+         selectionSort(); // Re-sort to make sure newest score appears first in high scores table
 
          System.out.println("\n** New High Score for '\033[1m" + name + "\033[0m' added! **"); // Output message for new high scorer
       }
@@ -146,15 +170,15 @@ public class Make15 {
    public void displayReplay() {
       // Check if there's a name present (needs high score for this to be true)
       if (playerName == null) {
-         System.out.print("\033[1m\u001B[4m\n\n = = = = = = GAME REPLAY = = = = = = \u001B[0m\033[0m");
+         System.out.print("\033[1m\u001B[4m\n\n = = = = = = GAME REPLAY = = = = = = \u001B[0m\033[0m\n");
       }
       else {
-         System.out.print("\033[1m\u001B[4m\n\n= = = = GAME REPLAY for " + playerName + " = = = =\u001B[0m\033[0m");
+         System.out.print("\033[1m\u001B[4m\n\n= = = = GAME REPLAY for '" + playerName + "' = = = =\u001B[0m\033[0m\n");
       }
 
       // FOR each entry in the game log
       for (String entry : gameLog) {
-         System.out.println(entry + "\n-------------------------------------");
+         System.out.println(entry + "\n------------------------------------------------------------------------------------------------------");
       }
 
       System.out.println();
@@ -171,7 +195,7 @@ public class Make15 {
       while (!GAMEOVER) {
 
          // REPLAY FUNCTION: Round counter
-         String roundHeader = String.format("\n\n%-14s%-7s%-12d%-1s", "----", "Round", round++, "----");
+         String roundHeader = String.format("\n\n%-47s%-10s%-16d%-1s", "---------------------------------", "\033[1mRound", round++, "\033[0m---------------------------------");
          gameLog.add(roundHeader);
 
          // Checks if the deck or player's hand is empty before continuing
@@ -189,7 +213,7 @@ public class Make15 {
          }
 
          Card comCard = deck.dealCard(); // Creating computer's (opponent's) card
-         displayRound(playerHand, comCard, score);
+         displayRound(playerHand, comCard, score); // Display hand for current round
 
          int choice; // Choice variable - defined outside loop to allow access
 
@@ -225,7 +249,7 @@ public class Make15 {
                   gameLog.add("Player's hand:\t\t\t" + playerHand +
                         "\nComputer's card:\t\t" + comCard +
                         "\n\nPlayer played:\t\t\t" + chosenCard +
-                        "\n\n_____________________________________" +
+                        "\n\n__________________________________" +
                         "\nOutcome:\t\tMade 15! +1 point");
 
                   // Checking for picture cards in current hand and adding to new list
@@ -316,7 +340,7 @@ public class Make15 {
                   gameLog.add("Player's hand:\t\t\t" + playerHand +
                         "\nComputer's card:\t\t" + comCard +
                         "\n\nPlayer played:\t\t\t" + chosenCard +
-                        "\n\n_____________________________________" +
+                        "\n\n______________________________________" +
                         "\nOutcome:\t\tSame suits. No points");
 
                   if (deck.isEmpty()) {
@@ -333,7 +357,11 @@ public class Make15 {
                   System.out.println("\nInvalid move. No valid moves left. GAME OVER!");
 
                   // REPLAY FUNCTION: Game Over - No valid moves left
-                  gameLog.add("No valid moves left. GAME OVER!");
+                  gameLog.add("Player's hand:\t\t\t" + playerHand +
+                        "\nComputer's card:\t\t" + comCard +
+                        "\n\nPlayer played:\t\t\t" + chosenCard +
+                        "\n\n________________________________________________________________" +
+                        "\nOutcome:\t\tNo valid (point gaining) moves left. GAME OVER!");
 
                   GAMEOVER = true; // Exit outer loop ("while (!GAMEOVER)")
                   break; // Exit inner loop ("while (!validMove)")
@@ -343,7 +371,11 @@ public class Make15 {
                   System.out.println("\nInvalid move. GAME OVER!");
 
                   // REPLAY FUNCTION: Game Over - Invalid move played
-                  gameLog.add("Invalid move. GAME OVER!");
+                  gameLog.add("Player's hand:\t\t\t" + playerHand +
+                        "\nComputer's card:\t\t" + comCard +
+                        "\n\nPlayer played:\t\t\t" + chosenCard +
+                        "\n\n________________________________________________" +
+                        "\nOutcome:\t\tInvalid move played. GAME OVER!");
 
                   GAMEOVER = true; // Exit outer loop ("while (!GAMEOVER)")
                   break; // Exit inner loop ("while (!validMove)")
@@ -384,7 +416,7 @@ public class Make15 {
             // Call method to show replay for the (now ended game)
             displayReplay();
 
-            System.out.print("\033[1m\u001B[4m = = = = =  END OF REPLAY  = = = = = \u001B[0m\033[0m\n\n");
+            System.out.print("\n\033[1m\u001B[4m = = = = =  END OF REPLAY  = = = = = \u001B[0m\033[0m\n\n");
 
             break;
          }
@@ -451,7 +483,7 @@ public class Make15 {
             // Option 1 - Start Game
             case 1:
                System.out.println("\n-------------------------------------------");
-               System.out.println("|  =  =  =  Welcome to Make 15!  =  =  =  |");
+               System.out.println("|  =  =  =  \033[1mWelcome to Make 15!\033[0m  =  =  =  |");
                System.out.println("-------------------------------------------");
 
                // Create new game

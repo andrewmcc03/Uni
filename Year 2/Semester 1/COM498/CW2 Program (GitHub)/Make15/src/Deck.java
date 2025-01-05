@@ -27,15 +27,7 @@ public class Deck {
       shuffle();
    }
 
-   // Method to deal a new card for both player's hand and computer's card
-   public Card dealCard() {
-      if (!cards.isEmpty()) {
-         return cards.remove(cards.size() - 1);
-      }
-      return null;
-   }
-
-   // Method to shuffle the deck in a randomised order
+   // Method to shuffle the deck in a randomised order (Fisher-Yates)
    public void shuffle() {
       Random random = new Random(); // For random number/value generation
 
@@ -45,6 +37,14 @@ public class Deck {
          cards.set(i, cards.get(j));
          cards.set(j, temp);
       }
+   }
+
+   // Method to deal a new card for both player's hand and computer's card
+   public Card dealCard() {
+      if (!cards.isEmpty()) {
+         return cards.remove(cards.size() - 1);
+      }
+      return null;
    }
 
    // Method to check if arrays/lists are or aren't empty
