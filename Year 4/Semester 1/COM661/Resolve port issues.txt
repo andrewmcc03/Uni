@@ -1,0 +1,10 @@
+CMD run (change 5000 to whichever port needs checked):
+
+netstat -aon | findstr :5000
+
+======================================================
+
+Python code to change port in app:
+
+if __name__ == '__main__':
+    app.run(debug=True, port = 4999)
