@@ -49,7 +49,7 @@ def add_business():
             "name" : request.form["name"],
             "town" : request.form["town"],
             "rating" : request.form["rating"],
-            "reviews" : {}
+            "reviews" : []
         }
         businesses[next_id] = new_business
         return make_response( jsonify( { next_id : new_business } ), 201 )
@@ -70,7 +70,7 @@ def edit_business(id):
                 businesses[id]["town"] = request.form["town"]
             if "rating" in request.form:
                 businesses[id]["rating"] = request.form["rating"]
-            return make_response( jsonify( { id : businesses[id] } ), 200 )            
+            return make_response( jsonify( { id : businesses[id] } ), 200 )
 
 @app.route("/api/v1.0/businesses/<string:id>", methods=["DELETE"])
 def delete_business(id):
