@@ -1,0 +1,3 @@
+Services > Manually start MongoDB server then 'mongosh'
+
+Set environment variables (if necessary)

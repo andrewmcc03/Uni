@@ -1,0 +1,5 @@
+Create new venv:
+python -m venv venv
+
+Activate venv in shell terminal:
+.\venv\Scripts\activate.bat

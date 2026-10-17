@@ -1,0 +1,19 @@
+To BACKUP DB:
+
+- run batch file to BACKUP to dated folder
+
+To RESTORE DB:
+
+- use batch file to RESTORE to C:\data\db folder (default location) on whichever machine in use
+
+THEN
+
+cd C:\Users\Andrew\OneDrive - Ulster University\All Uni\Year 4\Semester 1\Full-stack Strategies and Development (COM661)\GitHub REPO\Uni\Year 4\Semester 1\COM661\Week X\(any subfolder if necessary)
+
+.\venv\Scripts\activate.bat
+
+mongosh
+
+use bizDB
+
+db.biz.find()
