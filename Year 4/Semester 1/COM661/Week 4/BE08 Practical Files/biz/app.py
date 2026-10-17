@@ -48,6 +48,7 @@ def admin_required(func):
             return make_response( jsonify( { 'message' : 'Admin access is required.' } ), 401 )
     return admin_required_wrapper
 
+
 ###############################################################################################
 
 
@@ -70,7 +71,7 @@ def show_all_businesses():
     return make_response( jsonify( data_to_return ), 200 )
 
 @app.route('/api/v1.0/businesses/<string:id>', methods=['GET'])
-@jwt_required   # user authed
+#@jwt_required   # user authed
 def show_one_business(id):
     business = businesses.find_one({'_id' : ObjectId(id)})
     if business is not None:
