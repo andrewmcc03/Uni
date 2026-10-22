@@ -66,8 +66,7 @@ def edit_business(id):
             "$set" : {
                 "name" : request.form["name"],
                 "town" : request.form["town"],
-                "rating" : request.form["rating"],
-                "reviews" : []
+                "rating" : request.form["rating"]
             }
         })
         if result.matched_count == 1:
@@ -89,7 +88,7 @@ def delete_business(id):
 @app.route("/api/v1.0/businesses/<string:id>/reviews", methods=["POST"])
 def add_new_review(id):
     if not "username" in request.form or not "comment" in request.form or not "stars" in request.form:
-        return make_response( jsonify( { "error" : "Missing form data1." } ), 400 )
+        return make_response( jsonify( { "error" : "Missing form data." } ), 400 )
     else:
         new_review = {
             "_id" : ObjectId(),
@@ -105,7 +104,7 @@ def add_new_review(id):
                 + id + "/reviews/" + str(new_review["_id"])
             return make_response( jsonify( {"url" : new_review_link} ), 201 )
         else:
-            return make_response( jsonify( { "error" : "Invalid business ID" } ), 404 )
+            return make_response( jsonify( { "error" : "Invalid business ID." } ), 404 )
 
 @app.route("/api/v1.0/businesses/<string:id>/reviews", methods=["GET"])
 def fetch_all_reviews(id):

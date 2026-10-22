@@ -60,8 +60,7 @@ def edit_business(id):
             "$set" : {
                 "name" : request.form["name"],
                 "town" : request.form["town"],
-                "rating" : request.form["rating"],
-                "reviews" : []
+                "rating" : request.form["rating"]
             }
         })
         if result.matched_count == 1:
