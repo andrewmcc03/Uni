@@ -1,0 +1,269 @@
+[
+  {
+    "_id": "movie_1",
+    "sourceMovieId": 1,
+    "title": "Toy Story (1995)",
+    "releaseYear": 1995,
+    "genres": [
+      "Adventure",
+      "Animation",
+      "Children",
+      "Comedy",
+      "Fantasy"
+    ],
+    "averageRating": 3.92,
+    "ratingCount": 215,
+    "ratings": [
+      {
+        "_id": "rating_1_1",
+        "sourceUserId": 1,
+        "rating": 4.0,
+        "date": "2000-07-30T18:45:03+00:00"
+      }
+    ],
+    "tags": [
+      {
+        "_id": "tag_1_336_1139045764",
+        "sourceUserId": 336,
+        "tag": "pixar",
+        "date": "2006-02-04T09:36:04+00:00"
+      },
+      {
+        "_id": "tag_1_567_1525286013",
+        "sourceUserId": 567,
+        "tag": "fun",
+        "date": "2018-05-02T18:33:33+00:00"
+      }
+    ],
+    "externalIds": {
+      "imdbId": "0114709",
+      "tmdbId": 862
+    }
+  },
+  
+  {
+    "_id": "ObjectId",
+    "title": "Toy Story (1995)",
+    "releaseYear": 1995,
+    "genres": [
+      "Adventure",
+      "Animation",
+      "Children",
+      "Comedy",
+      "Fantasy"
+    ],
+    "tags": [
+      {
+        "_id": "ObjectId",
+        "tag": "pixar",
+        "date": "2006-02-04T09:36:04+00:00"
+      },
+      {
+        "_id": "ObjectId",
+        "tag": "fun",
+        "date": "2018-05-02T18:33:33+00:00"
+      }
+    ],
+    "reviews": [
+      {
+        "_id": "ObjectId",
+        "userId" : "ObjectId",
+        "rating": 4.0,
+        "date": "2000-07-30T18:45:03+00:00"
+      }
+    ]
+  },
+
+  {
+  "_id": {
+    "$oid": "672f1a2b3c4d5e6f78901234"
+  },
+  "sourceMovieId": 1,
+  "title": "Toy Story",
+  "releaseYear": 1995,
+  "genres": [
+    "Adventure",
+    "Animation",
+    "Children",
+    "Comedy",
+    "Fantasy"
+  ],
+  "averageRating": 3.92,
+  "ratingCount": 215,
+  "weightedRating": 3.89,
+  "tagCount": 2,
+  "ratings": [
+    {
+      "_id": {
+        "$oid": "672f1a2b3c4d5e6f78901235"
+      },
+      "sourceUserId": 1,
+      "rating": 4.0,
+      "date": {
+        "$date": "2000-07-30T18:45:03Z"
+      }
+    }
+  ],
+  "tags": [
+    {
+      "_id": {
+        "$oid": "672f1a2b3c4d5e6f78901236"
+      },
+      "sourceUserId": 336,
+      "tag": "pixar",
+      "date": {
+        "$date": "2006-02-04T09:36:04Z"
+      }
+    },
+    {
+      "_id": {
+        "$oid": "672f1a2b3c4d5e6f78901237"
+      },
+      "sourceUserId": 567,
+      "tag": "fun",
+      "date": {
+        "$date": "2018-05-02T18:33:33Z"
+      }
+    }
+  ],
+  "reviews": [],
+  "externalIds": {
+    "imdbId": "0114709",
+    "tmdbId": 862
+  }
+},
+
+{
+    "_id": "6ae3e6851dad7c58d3e8e7d3",
+    "sourceMovieId": 1,
+    "title": "Toy Story",
+    "releaseYear": 1995,
+    "genres": [
+      "Adventure",
+      "Animation",
+      "Children",
+      "Comedy",
+      "Fantasy"
+    ],
+    "grossProfits": 428698730,
+    "averageRating": 3.92,
+    "ratingCount": 215,
+    "weightedRating": 3.89,
+    "reviewCount": 215,
+    "tagCount": 3,
+    "reviews": [
+      {
+        "_id": "6ae3e6851dad7c58d3e8aa7c",
+        "sourceUserId": 1,
+        "name": "Morgan Hayes",
+        "comment": "An entertaining film that I would happily watch again.",
+        "rating": 4.0,
+        "date": "2000-07-30T18:45:03Z"
+      }
+    ],
+    "tags": [
+      {
+        "_id": "6ae3e6851dad7c58d3e8e605",
+        "sourceUserId": 336,
+        "tag": "pixar",
+        "date": "2006-02-04T09:36:04Z"
+      }
+    ],
+    "externalIds": {
+      "imdbId": "0114709",
+      "tmdbId": 862
+    }
+  },
+
+
+  {
+    "_id": {
+      "$oid": "6ae6090fb4ed4df643ee165a"
+    },
+    "sourceMovieId": 1,
+    "title": "Toy Story",
+    "releaseYear": 1995,
+    "genres": [
+      "Adventure",
+      "Animation",
+      "Children",
+      "Comedy",
+      "Fantasy"
+    ],
+    "grossProfits": 428698730,
+    "averageRating": 3.92,
+    "weightedRating": 3.89,
+    "reviewCount": 215,
+    "tagCount": 3,
+    "reviews": [
+      {
+        "_id": {
+          "$oid": "6ae6090fb4ed4df643edd903"
+        },
+        "sourceUserId": 1,
+        "name": "Morgan Hayes",
+        "comment": "An entertaining film that I would happily watch again.",
+        "rating": 4.0,
+        "date": "2000-07-30T18:45:03Z"
+      }
+    ],
+    "tags": [
+      {
+        "_id": {
+          "$oid": "6ae6090fb4ed4df643ee148c"
+        },
+        "sourceUserId": 336,
+        "tag": "pixar",
+        "date": "2006-02-04T09:36:04Z"
+      }
+    ],
+    "externalIds": {
+      "imdbId": "0114709",
+      "tmdbId": 862
+    }
+  },
+  
+{
+  "_id": "6ae9267c0e847d6174c1bd74",
+  "averageRating": 3.92,
+  "externalIds": {
+    "imdbId": "0114709",
+    "tmdbId": 862
+  },
+  "genres": [
+    "Adventure",
+    "Animation",
+    "Children",
+    "Comedy",
+    "Fantasy"
+  ],
+  "grossProfits": 428698730,
+  "releaseYear": 1995,
+  "reviewCount": 215,
+  "reviews": [
+    {
+      "_id": "6ae9267c0e847d6174c1801d",
+      "comment": "An entertaining film that I would happily watch again.",
+      "createdAt": "2000-07-30T18:45:03Z",
+      "name": "Morgan Hayes",
+      "rating": 4.0,
+      "sourceUserId": 1,
+      "username": "morganhayes7249"
+    }
+  ],
+  "sourceMovieId": 1,
+  "tagCount": 3,
+  "tags": [
+    {
+      "_id": "6ae9267c0e847d6174c1bba6",
+      "createdAt": "2006-02-04T09:36:04Z",
+      "name": "Alex Ward",
+      "sourceUserId": 336,
+      "tag": "pixar",
+      "username": "alexward2984"
+    }
+  ],
+  "title": "Toy Story",
+  "weightedRating": 3.89
+}
+]

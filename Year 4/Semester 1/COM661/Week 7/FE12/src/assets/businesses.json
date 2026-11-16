@@ -1,0 +1,3102 @@
+[
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec82461958517"
+        },
+        "name": "Biz 0",
+        "town": "Derry",
+        "rating": 5,
+        "reviews": [],
+        "num_employees": 79,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": -89343
+            },
+            {
+                "year": "2023",
+                "gross": 25458
+            },
+            {
+                "year": "2024",
+                "gross": -427038
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                54.995080516583,
+                -7.2683464547869985
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec82461958518"
+        },
+        "name": "Biz 8",
+        "town": "Banbridge",
+        "rating": 3,
+        "reviews": [],
+        "num_employees": 11,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": 284914
+            },
+            {
+                "year": "2023",
+                "gross": -473370
+            },
+            {
+                "year": "2024",
+                "gross": 488690
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                54.3555836079474,
+                -6.2655811871830265
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec82461958519"
+        },
+        "name": "Biz 3",
+        "town": "Belfast",
+        "rating": 2,
+        "reviews": [],
+        "num_employees": 66,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": 13845
+            },
+            {
+                "year": "2023",
+                "gross": 23494
+            },
+            {
+                "year": "2024",
+                "gross": 21648
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                54.62427804474236,
+                -5.973153697641421
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec8246195851a"
+        },
+        "name": "Biz 1",
+        "town": "Banbridge",
+        "rating": 5,
+        "reviews": [],
+        "num_employees": 72,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": 376409
+            },
+            {
+                "year": "2023",
+                "gross": 484224
+            },
+            {
+                "year": "2024",
+                "gross": -154983
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                54.3407946235423,
+                -6.250417754982315
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec8246195851b"
+        },
+        "name": "Biz 5",
+        "town": "Lisburn",
+        "rating": 5,
+        "reviews": [],
+        "num_employees": 72,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": -340662
+            },
+            {
+                "year": "2023",
+                "gross": -384233
+            },
+            {
+                "year": "2024",
+                "gross": 479354
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                54.52246675792479,
+                -6.048450211742229
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec8246195851c"
+        },
+        "name": "Biz 4",
+        "town": "Belfast",
+        "rating": 5,
+        "reviews": [],
+        "num_employees": 53,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": 106366
+            },
+            {
+                "year": "2023",
+                "gross": 209121
+            },
+            {
+                "year": "2024",
+                "gross": -410980
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                54.59366558460923,
+                -5.888597145229977
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec8246195851d"
+        },
+        "name": "Biz 16",
+        "town": "Lisburn",
+        "rating": 5,
+        "reviews": [],
+        "num_employees": 2,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": 311161
+            },
+            {
+                "year": "2023",
+                "gross": -220917
+            },
+            {
+                "year": "2024",
+                "gross": -99699
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                54.505582717433775,
+                -6.068983309692611
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec8246195851e"
+        },
+        "name": "Biz 15",
+        "town": "Ballymena",
+        "rating": 4,
+        "reviews": [],
+        "num_employees": 57,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": 91455
+            },
+            {
+                "year": "2023",
+                "gross": -95605
+            },
+            {
+                "year": "2024",
+                "gross": -426621
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                54.84681102208012,
+                -6.2800323725961125
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec8246195851f"
+        },
+        "name": "Biz 2",
+        "town": "Lisburn",
+        "rating": 4,
+        "reviews": [],
+        "num_employees": 7,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": 196306
+            },
+            {
+                "year": "2023",
+                "gross": 397998
+            },
+            {
+                "year": "2024",
+                "gross": -150297
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                54.50727112148287,
+                -6.105160672748048
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec82461958520"
+        },
+        "name": "Biz 11",
+        "town": "Enniskillen",
+        "rating": 4,
+        "reviews": [],
+        "num_employees": 6,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": 299959
+            },
+            {
+                "year": "2023",
+                "gross": 344997
+            },
+            {
+                "year": "2024",
+                "gross": -463038
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                54.362636039485736,
+                -7.62540355818017
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec82461958521"
+        },
+        "name": "Biz 12",
+        "town": "Ballymoney",
+        "rating": 4,
+        "reviews": [],
+        "num_employees": 37,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": 9851
+            },
+            {
+                "year": "2023",
+                "gross": 151897
+            },
+            {
+                "year": "2024",
+                "gross": -162388
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                55.060820104062266,
+                -6.511797371890079
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec82461958522"
+        },
+        "name": "Biz 17",
+        "town": "Ballymena",
+        "rating": 2,
+        "reviews": [],
+        "num_employees": 56,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": 182677
+            },
+            {
+                "year": "2023",
+                "gross": -299333
+            },
+            {
+                "year": "2024",
+                "gross": 78241
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                54.870076748857244,
+                -6.283299845687674
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec82461958523"
+        },
+        "name": "Biz 18",
+        "town": "Banbridge",
+        "rating": 1,
+        "reviews": [],
+        "num_employees": 33,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": -98227
+            },
+            {
+                "year": "2023",
+                "gross": -278798
+            },
+            {
+                "year": "2024",
+                "gross": -265186
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                54.32888127499375,
+                -6.253450441422458
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec82461958524"
+        },
+        "name": "Biz 14",
+        "town": "Belfast",
+        "rating": 5,
+        "reviews": [],
+        "num_employees": 73,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": -463892
+            },
+            {
+                "year": "2023",
+                "gross": -309981
+            },
+            {
+                "year": "2024",
+                "gross": 324943
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                54.63533254423488,
+                -5.95201455953856
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec82461958525"
+        },
+        "name": "Biz 19",
+        "town": "Banbridge",
+        "rating": 1,
+        "reviews": [],
+        "num_employees": 76,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": 391326
+            },
+            {
+                "year": "2023",
+                "gross": -10913
+            },
+            {
+                "year": "2024",
+                "gross": 42247
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                54.36051326941577,
+                -6.257696202438656
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec82461958526"
+        },
+        "name": "Biz 20",
+        "town": "Banbridge",
+        "rating": 3,
+        "reviews": [],
+        "num_employees": 23,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": -447189
+            },
+            {
+                "year": "2023",
+                "gross": 36377
+            },
+            {
+                "year": "2024",
+                "gross": -442140
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                54.360102464293405,
+                -6.29894073802459
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec82461958527"
+        },
+        "name": "Biz 21",
+        "town": "Lisburn",
+        "rating": 1,
+        "reviews": [],
+        "num_employees": 57,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": 219559
+            },
+            {
+                "year": "2023",
+                "gross": 68784
+            },
+            {
+                "year": "2024",
+                "gross": -322738
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                54.50262801034785,
+                -6.096360773626455
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec82461958528"
+        },
+        "name": "Biz 22",
+        "town": "Coleraine",
+        "rating": 5,
+        "reviews": [],
+        "num_employees": 97,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": -209257
+            },
+            {
+                "year": "2023",
+                "gross": 405709
+            },
+            {
+                "year": "2024",
+                "gross": -62221
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                55.11142496732113,
+                -6.642511827596264
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec82461958529"
+        },
+        "name": "Biz 23",
+        "town": "Banbridge",
+        "rating": 3,
+        "reviews": [],
+        "num_employees": 42,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": 61368
+            },
+            {
+                "year": "2023",
+                "gross": -110937
+            },
+            {
+                "year": "2024",
+                "gross": 204165
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                54.35887004892631,
+                -6.268613873623169
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec8246195852a"
+        },
+        "name": "Biz 24",
+        "town": "Banbridge",
+        "rating": 1,
+        "reviews": [],
+        "num_employees": 68,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": 314829
+            },
+            {
+                "year": "2023",
+                "gross": 64814
+            },
+            {
+                "year": "2024",
+                "gross": 405833
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                54.36790776161832,
+                -6.288023066840078
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec8246195852b"
+        },
+        "name": "Biz 13",
+        "town": "Ballymoney",
+        "rating": 2,
+        "reviews": [],
+        "num_employees": 23,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": 183615
+            },
+            {
+                "year": "2023",
+                "gross": -359343
+            },
+            {
+                "year": "2024",
+                "gross": -256112
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                55.060820104062266,
+                -6.496899359506063
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec8246195852c"
+        },
+        "name": "Biz 25",
+        "town": "Ballymena",
+        "rating": 3,
+        "reviews": [],
+        "num_employees": 5,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": -454205
+            },
+            {
+                "year": "2023",
+                "gross": 168924
+            },
+            {
+                "year": "2024",
+                "gross": 257901
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                54.847822575418256,
+                -6.233198591617061
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec8246195852d"
+        },
+        "name": "Biz 27",
+        "town": "Omagh",
+        "rating": 5,
+        "reviews": [],
+        "num_employees": 78,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": 448433
+            },
+            {
+                "year": "2023",
+                "gross": 50599
+            },
+            {
+                "year": "2024",
+                "gross": 220841
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                54.601617806810026,
+                -7.254914304512523
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec8246195852e"
+        },
+        "name": "Biz 28",
+        "town": "Newry",
+        "rating": 3,
+        "reviews": [],
+        "num_employees": 5,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": 161149
+            },
+            {
+                "year": "2023",
+                "gross": 106059
+            },
+            {
+                "year": "2024",
+                "gross": -238923
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                54.17654471300192,
+                -6.350974842726302
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec8246195852f"
+        },
+        "name": "Biz 7",
+        "town": "Newry",
+        "rating": 3,
+        "reviews": [],
+        "num_employees": 67,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": -79708
+            },
+            {
+                "year": "2023",
+                "gross": -340919
+            },
+            {
+                "year": "2024",
+                "gross": -423157
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                54.15753991789216,
+                -6.377061566451784
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec82461958530"
+        },
+        "name": "Biz 9",
+        "town": "Lisburn",
+        "rating": 2,
+        "reviews": [],
+        "num_employees": 55,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": 358381
+            },
+            {
+                "year": "2023",
+                "gross": -282774
+            },
+            {
+                "year": "2024",
+                "gross": 28600
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                54.519089949826586,
+                -6.070938842830743
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec82461958531"
+        },
+        "name": "Biz 6",
+        "town": "Coleraine",
+        "rating": 2,
+        "reviews": [],
+        "num_employees": 46,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": -285776
+            },
+            {
+                "year": "2023",
+                "gross": 33195
+            },
+            {
+                "year": "2024",
+                "gross": 72695
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                55.13422781781727,
+                -6.6861730959555015
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec82461958532"
+        },
+        "name": "Biz 29",
+        "town": "Ballymena",
+        "rating": 1,
+        "reviews": [],
+        "num_employees": 53,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": 71279
+            },
+            {
+                "year": "2023",
+                "gross": -38289
+            },
+            {
+                "year": "2024",
+                "gross": 229495
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                54.843270585396645,
+                -6.251714272469244
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec82461958533"
+        },
+        "name": "Biz 30",
+        "town": "Enniskillen",
+        "rating": 2,
+        "reviews": [],
+        "num_employees": 72,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": 244320
+            },
+            {
+                "year": "2023",
+                "gross": 8379
+            },
+            {
+                "year": "2024",
+                "gross": -189428
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                54.360934743690386,
+                -7.6235590423611965
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec82461958534"
+        },
+        "name": "Biz 31",
+        "town": "Ballymena",
+        "rating": 4,
+        "reviews": [],
+        "num_employees": 88,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": 199037
+            },
+            {
+                "year": "2023",
+                "gross": -275301
+            },
+            {
+                "year": "2024",
+                "gross": -204282
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                54.84023592538224,
+                -6.271319111018615
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec82461958535"
+        },
+        "name": "Biz 32",
+        "town": "Belfast",
+        "rating": 4,
+        "reviews": [],
+        "num_employees": 5,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": -343885
+            },
+            {
+                "year": "2023",
+                "gross": -448341
+            },
+            {
+                "year": "2024",
+                "gross": 48374
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                54.615774583594266,
+                -5.956242387159132
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec82461958536"
+        },
+        "name": "Biz 33",
+        "town": "Lisburn",
+        "rating": 1,
+        "reviews": [],
+        "num_employees": 54,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": 416802
+            },
+            {
+                "year": "2023",
+                "gross": -420414
+            },
+            {
+                "year": "2024",
+                "gross": -492453
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                54.50051750528647,
+                -6.036717012913439
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec82461958537"
+        },
+        "name": "Biz 36",
+        "town": "Enniskillen",
+        "rating": 4,
+        "reviews": [],
+        "num_employees": 10,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": 223226
+            },
+            {
+                "year": "2023",
+                "gross": -136775
+            },
+            {
+                "year": "2024",
+                "gross": -239203
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                54.3681652508206,
+                -7.646615490098365
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec82461958538"
+        },
+        "name": "Biz 35",
+        "town": "Ballymoney",
+        "rating": 2,
+        "reviews": [],
+        "num_employees": 55,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": -306742
+            },
+            {
+                "year": "2023",
+                "gross": -354300
+            },
+            {
+                "year": "2024",
+                "gross": -215352
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                55.06170794469838,
+                -6.527759528015811
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec82461958539"
+        },
+        "name": "Biz 38",
+        "town": "Belfast",
+        "rating": 4,
+        "reviews": [],
+        "num_employees": 24,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": -423791
+            },
+            {
+                "year": "2023",
+                "gross": -409845
+            },
+            {
+                "year": "2024",
+                "gross": -375809
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                54.5826110851167,
+                -5.842091041403683
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec8246195853a"
+        },
+        "name": "Biz 34",
+        "town": "Enniskillen",
+        "rating": 4,
+        "reviews": [],
+        "num_employees": 65,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": -113865
+            },
+            {
+                "year": "2023",
+                "gross": -163411
+            },
+            {
+                "year": "2024",
+                "gross": -279423
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                54.3375419265044,
+                -7.657682585012205
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec8246195853b"
+        },
+        "name": "Biz 39",
+        "town": "Coleraine",
+        "rating": 5,
+        "reviews": [],
+        "num_employees": 75,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": -57688
+            },
+            {
+                "year": "2023",
+                "gross": 155562
+            },
+            {
+                "year": "2024",
+                "gross": 179873
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                55.136399517864525,
+                -6.67619337747339
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec8246195853c"
+        },
+        "name": "Biz 37",
+        "town": "Ballymoney",
+        "rating": 3,
+        "reviews": [],
+        "num_employees": 75,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": 327232
+            },
+            {
+                "year": "2023",
+                "gross": 172933
+            },
+            {
+                "year": "2024",
+                "gross": -151735
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                55.072953926089056,
+                -6.530951959240958
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec8246195853d"
+        },
+        "name": "Biz 40",
+        "town": "Enniskillen",
+        "rating": 4,
+        "reviews": [],
+        "num_employees": 29,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": 87601
+            },
+            {
+                "year": "2023",
+                "gross": -370536
+            },
+            {
+                "year": "2024",
+                "gross": 137026
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                54.35710682815086,
+                -7.67059419574502
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec8246195853e"
+        },
+        "name": "Biz 41",
+        "town": "Derry",
+        "rating": 5,
+        "reviews": [],
+        "num_employees": 96,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": -121544
+            },
+            {
+                "year": "2023",
+                "gross": 32080
+            },
+            {
+                "year": "2024",
+                "gross": 434565
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                54.985541938954356,
+                -7.261180988543062
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec8246195853f"
+        },
+        "name": "Biz 10",
+        "town": "Derry",
+        "rating": 2,
+        "reviews": [],
+        "num_employees": 89,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": -332682
+            },
+            {
+                "year": "2023",
+                "gross": 276183
+            },
+            {
+                "year": "2024",
+                "gross": 93715
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                55.00408917323228,
+                -7.331641406608444
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec82461958540"
+        },
+        "name": "Biz 26",
+        "town": "Coleraine",
+        "rating": 5,
+        "reviews": [],
+        "num_employees": 91,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": 304177
+            },
+            {
+                "year": "2023",
+                "gross": -226043
+            },
+            {
+                "year": "2024",
+                "gross": 9340
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                55.15757359332523,
+                -6.654362743293771
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec82461958541"
+        },
+        "name": "Biz 42",
+        "town": "Ballymoney",
+        "rating": 2,
+        "reviews": [],
+        "num_employees": 9,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": 488122
+            },
+            {
+                "year": "2023",
+                "gross": 415335
+            },
+            {
+                "year": "2024",
+                "gross": -253497
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                55.05815658215395,
+                -6.5096690844066485
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec82461958542"
+        },
+        "name": "Biz 43",
+        "town": "Derry",
+        "rating": 3,
+        "reviews": [],
+        "num_employees": 35,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": -60436
+            },
+            {
+                "year": "2023",
+                "gross": 399079
+            },
+            {
+                "year": "2024",
+                "gross": 470578
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                54.99931988441796,
+                -7.365080249080152
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec82461958543"
+        },
+        "name": "Biz 48",
+        "town": "Ballymoney",
+        "rating": 5,
+        "reviews": [],
+        "num_employees": 47,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": -7556
+            },
+            {
+                "year": "2023",
+                "gross": -59344
+            },
+            {
+                "year": "2024",
+                "gross": -371984
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                55.08272017308622,
+                -6.535208534207819
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec82461958544"
+        },
+        "name": "Biz 44",
+        "town": "Lisburn",
+        "rating": 3,
+        "reviews": [],
+        "num_employees": 90,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": 34556
+            },
+            {
+                "year": "2023",
+                "gross": -365394
+            },
+            {
+                "year": "2024",
+                "gross": 185779
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                54.49840700022509,
+                -6.056272344294756
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec82461958545"
+        },
+        "name": "Biz 46",
+        "town": "Coleraine",
+        "rating": 1,
+        "reviews": [],
+        "num_employees": 49,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": 278848
+            },
+            {
+                "year": "2023",
+                "gross": -162569
+            },
+            {
+                "year": "2024",
+                "gross": 187775
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                55.11631129242744,
+                -6.664966194181015
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec82461958546"
+        },
+        "name": "Biz 45",
+        "town": "Belfast",
+        "rating": 3,
+        "reviews": [],
+        "num_employees": 80,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": -332134
+            },
+            {
+                "year": "2023",
+                "gross": -109516
+            },
+            {
+                "year": "2024",
+                "gross": 248584
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                54.60897181467579,
+                -5.850546696644828
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec82461958547"
+        },
+        "name": "Biz 51",
+        "town": "Omagh",
+        "rating": 4,
+        "reviews": [],
+        "num_employees": 7,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": -380358
+            },
+            {
+                "year": "2023",
+                "gross": 212159
+            },
+            {
+                "year": "2024",
+                "gross": 209312
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                54.588693329424494,
+                -7.3043057761815735
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec82461958548"
+        },
+        "name": "Biz 56",
+        "town": "Enniskillen",
+        "rating": 4,
+        "reviews": [],
+        "num_employees": 28,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": 265392
+            },
+            {
+                "year": "2023",
+                "gross": 360870
+            },
+            {
+                "year": "2024",
+                "gross": 54826
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                54.343921785736946,
+                -7.653071295464772
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec82461958549"
+        },
+        "name": "Biz 47",
+        "town": "Banbridge",
+        "rating": 2,
+        "reviews": [],
+        "num_employees": 83,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": 19469
+            },
+            {
+                "year": "2023",
+                "gross": 261020
+            },
+            {
+                "year": "2024",
+                "gross": -355647
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                54.35024314135667,
+                -6.257089665150628
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec8246195854a"
+        },
+        "name": "Biz 52",
+        "town": "Belfast",
+        "rating": 2,
+        "reviews": [],
+        "num_employees": 11,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": -331999
+            },
+            {
+                "year": "2023",
+                "gross": -158558
+            },
+            {
+                "year": "2024",
+                "gross": 113081
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                54.57580831619823,
+                -5.930875421435699
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec8246195854b"
+        },
+        "name": "Biz 53",
+        "town": "Enniskillen",
+        "rating": 1,
+        "reviews": [],
+        "num_employees": 11,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": 336465
+            },
+            {
+                "year": "2023",
+                "gross": 259109
+            },
+            {
+                "year": "2024",
+                "gross": -109454
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                54.341369842043925,
+                -7.667827422016559
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec8246195854c"
+        },
+        "name": "Biz 55",
+        "town": "Enniskillen",
+        "rating": 5,
+        "reviews": [],
+        "num_employees": 44,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": 119458
+            },
+            {
+                "year": "2023",
+                "gross": -260211
+            },
+            {
+                "year": "2024",
+                "gross": 375483
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                54.32733415173233,
+                -7.677050001111427
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec8246195854d"
+        },
+        "name": "Biz 49",
+        "town": "Lisburn",
+        "rating": 1,
+        "reviews": [],
+        "num_employees": 81,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": -317375
+            },
+            {
+                "year": "2023",
+                "gross": -250526
+            },
+            {
+                "year": "2024",
+                "gross": -349441
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                54.49503019212689,
+                -6.077783208814204
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec8246195854e"
+        },
+        "name": "Biz 62",
+        "town": "Lisburn",
+        "rating": 3,
+        "reviews": [],
+        "num_employees": 82,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": -39215
+            },
+            {
+                "year": "2023",
+                "gross": -481029
+            },
+            {
+                "year": "2024",
+                "gross": 464035
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                54.5275319700721,
+                -6.0816942750904674
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec8246195854f"
+        },
+        "name": "Biz 64",
+        "town": "Banbridge",
+        "rating": 4,
+        "reviews": [],
+        "num_employees": 56,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": 200320
+            },
+            {
+                "year": "2023",
+                "gross": 58270
+            },
+            {
+                "year": "2024",
+                "gross": -10191
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                54.333810936462115,
+                -6.272253097351339
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec82461958550"
+        },
+        "name": "Biz 65",
+        "town": "Newry",
+        "rating": 1,
+        "reviews": [],
+        "num_employees": 63,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": -330600
+            },
+            {
+                "year": "2023",
+                "gross": 147381
+            },
+            {
+                "year": "2024",
+                "gross": -194556
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                54.190798309334234,
+                -6.3122400105278595
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec82461958551"
+        },
+        "name": "Biz 50",
+        "town": "Banbridge",
+        "rating": 5,
+        "reviews": [],
+        "num_employees": 68,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": -60968
+            },
+            {
+                "year": "2023",
+                "gross": -451148
+            },
+            {
+                "year": "2024",
+                "gross": -414633
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                54.337918987685754,
+                -6.278318470231623
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec82461958552"
+        },
+        "name": "Biz 66",
+        "town": "Newry",
+        "rating": 5,
+        "reviews": [],
+        "num_employees": 28,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": 275068
+            },
+            {
+                "year": "2023",
+                "gross": 327144
+            },
+            {
+                "year": "2024",
+                "gross": -399356
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                54.1749609800761,
+                -6.380223593570023
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec82461958553"
+        },
+        "name": "Biz 58",
+        "town": "Ballymena",
+        "rating": 2,
+        "reviews": [],
+        "num_employees": 45,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": -22651
+            },
+            {
+                "year": "2023",
+                "gross": 457874
+            },
+            {
+                "year": "2024",
+                "gross": 134821
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                54.84377636206571,
+                -6.261516691743929
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec82461958554"
+        },
+        "name": "Biz 67",
+        "town": "Omagh",
+        "rating": 4,
+        "reviews": [],
+        "num_employees": 12,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": 237845
+            },
+            {
+                "year": "2023",
+                "gross": -103936
+            },
+            {
+                "year": "2024",
+                "gross": 212792
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                54.60476159860651,
+                -7.273111162495857
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec82461958555"
+        },
+        "name": "Biz 63",
+        "town": "Banbridge",
+        "rating": 4,
+        "reviews": [],
+        "num_employees": 88,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": 305024
+            },
+            {
+                "year": "2023",
+                "gross": -334873
+            },
+            {
+                "year": "2024",
+                "gross": 169252
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                54.3305244954832,
+                -6.238287009221747
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec82461958556"
+        },
+        "name": "Biz 68",
+        "town": "Lisburn",
+        "rating": 5,
+        "reviews": [],
+        "num_employees": 65,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": -54571
+            },
+            {
+                "year": "2023",
+                "gross": -182978
+            },
+            {
+                "year": "2024",
+                "gross": -52971
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                54.50009540427419,
+                -6.074849909107007
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec82461958557"
+        },
+        "name": "Biz 71",
+        "town": "Banbridge",
+        "rating": 4,
+        "reviews": [],
+        "num_employees": 90,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": 249521
+            },
+            {
+                "year": "2023",
+                "gross": -242432
+            },
+            {
+                "year": "2024",
+                "gross": -273355
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                54.34901072598958,
+                -6.29469497700839
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec82461958558"
+        },
+        "name": "Biz 70",
+        "town": "Banbridge",
+        "rating": 1,
+        "reviews": [],
+        "num_employees": 43,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": 212938
+            },
+            {
+                "year": "2023",
+                "gross": -345400
+            },
+            {
+                "year": "2024",
+                "gross": -480224
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                54.33463254670684,
+                -6.268613873623169
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec82461958559"
+        },
+        "name": "Biz 69",
+        "town": "Omagh",
+        "rating": 4,
+        "reviews": [],
+        "num_employees": 23,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": 218562
+            },
+            {
+                "year": "2023",
+                "gross": 495131
+            },
+            {
+                "year": "2024",
+                "gross": -35399
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                54.61663814539322,
+                -7.253181270418872
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec8246195855a"
+        },
+        "name": "Biz 54",
+        "town": "Newry",
+        "rating": 4,
+        "reviews": [],
+        "num_employees": 36,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": -381838
+            },
+            {
+                "year": "2023",
+                "gross": 411643
+            },
+            {
+                "year": "2024",
+                "gross": -262946
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                54.16176320569433,
+                -6.316192544425659
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec8246195855b"
+        },
+        "name": "Biz 72",
+        "town": "Lisburn",
+        "rating": 4,
+        "reviews": [],
+        "num_employees": 89,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": 427369
+            },
+            {
+                "year": "2023",
+                "gross": -418340
+            },
+            {
+                "year": "2024",
+                "gross": -205163
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                54.53470768728078,
+                -6.0504057448803605
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec8246195855c"
+        },
+        "name": "Biz 74",
+        "town": "Omagh",
+        "rating": 1,
+        "reviews": [],
+        "num_employees": 85,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": -322142
+            },
+            {
+                "year": "2023",
+                "gross": -173028
+            },
+            {
+                "year": "2024",
+                "gross": 233477
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                54.61628883519361,
+                -7.321636117118082
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec8246195855d"
+        },
+        "name": "Biz 73",
+        "town": "Lisburn",
+        "rating": 3,
+        "reviews": [],
+        "num_employees": 4,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": 71848
+            },
+            {
+                "year": "2023",
+                "gross": -122827
+            },
+            {
+                "year": "2024",
+                "gross": 31728
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                54.514024737679286,
+                -6.020094981239319
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec8246195855e"
+        },
+        "name": "Biz 60",
+        "town": "Banbridge",
+        "rating": 5,
+        "reviews": [],
+        "num_employees": 59,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": 28611
+            },
+            {
+                "year": "2023",
+                "gross": 374937
+            },
+            {
+                "year": "2024",
+                "gross": 104627
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                54.34243784403176,
+                -6.285596917687965
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec8246195855f"
+        },
+        "name": "Biz 75",
+        "town": "Banbridge",
+        "rating": 3,
+        "reviews": [],
+        "num_employees": 30,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": -306641
+            },
+            {
+                "year": "2023",
+                "gross": -291319
+            },
+            {
+                "year": "2024",
+                "gross": -460026
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                54.360102464293405,
+                -6.264368112606969
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec82461958560"
+        },
+        "name": "Biz 76",
+        "town": "Enniskillen",
+        "rating": 3,
+        "reviews": [],
+        "num_employees": 12,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": -132120
+            },
+            {
+                "year": "2023",
+                "gross": -289758
+            },
+            {
+                "year": "2024",
+                "gross": 274866
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                54.34434710968578,
+                -7.639237426822471
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec82461958561"
+        },
+        "name": "Biz 59",
+        "town": "Derry",
+        "rating": 4,
+        "reviews": [],
+        "num_employees": 4,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": -151051
+            },
+            {
+                "year": "2023",
+                "gross": 358771
+            },
+            {
+                "year": "2024",
+                "gross": 10145
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                55.001439568335435,
+                -7.298202564136737
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec82461958562"
+        },
+        "name": "Biz 61",
+        "town": "Ballymena",
+        "rating": 3,
+        "reviews": [],
+        "num_employees": 21,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": 56400
+            },
+            {
+                "year": "2023",
+                "gross": 364955
+            },
+            {
+                "year": "2024",
+                "gross": 407672
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                54.872605632202585,
+                -6.299637211145483
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec82461958563"
+        },
+        "name": "Biz 78",
+        "town": "Ballymena",
+        "rating": 1,
+        "reviews": [],
+        "num_employees": 76,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": -165057
+            },
+            {
+                "year": "2023",
+                "gross": 32530
+            },
+            {
+                "year": "2024",
+                "gross": -121723
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                54.87058252552631,
+                -6.314885418906105
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec82461958564"
+        },
+        "name": "Biz 79",
+        "town": "Banbridge",
+        "rating": 4,
+        "reviews": [],
+        "num_employees": 39,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": 465317
+            },
+            {
+                "year": "2023",
+                "gross": 234225
+            },
+            {
+                "year": "2024",
+                "gross": 255415
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                54.33750818256339,
+                -6.240106621085832
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec82461958565"
+        },
+        "name": "Biz 77",
+        "town": "Coleraine",
+        "rating": 5,
+        "reviews": [],
+        "num_employees": 91,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": -218672
+            },
+            {
+                "year": "2023",
+                "gross": -287799
+            },
+            {
+                "year": "2024",
+                "gross": 285532
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                55.10871034226206,
+                -6.664342461775883
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec82461958566"
+        },
+        "name": "Biz 80",
+        "town": "Ballymoney",
+        "rating": 2,
+        "reviews": [],
+        "num_employees": 30,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": 211141
+            },
+            {
+                "year": "2023",
+                "gross": -172051
+            },
+            {
+                "year": "2024",
+                "gross": 150751
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                55.05845252903265,
+                -6.509137012535791
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec82461958567"
+        },
+        "name": "Biz 82",
+        "town": "Belfast",
+        "rating": 3,
+        "reviews": [],
+        "num_employees": 22,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": -292237
+            },
+            {
+                "year": "2023",
+                "gross": 411877
+            },
+            {
+                "year": "2024",
+                "gross": 374989
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                54.616624929709076,
+                -5.861116265696258
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec82461958568"
+        },
+        "name": "Biz 83",
+        "town": "Omagh",
+        "rating": 2,
+        "reviews": [],
+        "num_employees": 16,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": 477602
+            },
+            {
+                "year": "2023",
+                "gross": -1216
+            },
+            {
+                "year": "2024",
+                "gross": 265033
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                54.59742608441472,
+                -7.254047787465698
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec82461958569"
+        },
+        "name": "Biz 81",
+        "town": "Belfast",
+        "rating": 2,
+        "reviews": [],
+        "num_employees": 65,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": -103268
+            },
+            {
+                "year": "2023",
+                "gross": -81185
+            },
+            {
+                "year": "2024",
+                "gross": 255455
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                54.5639034705909,
+                -5.968925870020849
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec8246195856a"
+        },
+        "name": "Biz 85",
+        "town": "Ballymena",
+        "rating": 5,
+        "reviews": [],
+        "num_employees": 34,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": -430110
+            },
+            {
+                "year": "2023",
+                "gross": -472735
+            },
+            {
+                "year": "2024",
+                "gross": -306725
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                54.84478791540385,
+                -6.2636950071383035
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec8246195856b"
+        },
+        "name": "Biz 84",
+        "town": "Lisburn",
+        "rating": 3,
+        "reviews": [],
+        "num_employees": 9,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": 76648
+            },
+            {
+                "year": "2023",
+                "gross": 357377
+            },
+            {
+                "year": "2024",
+                "gross": -135976
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                54.49756279820054,
+                -6.0816942750904674
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec8246195856c"
+        },
+        "name": "Biz 86",
+        "town": "Ballymoney",
+        "rating": 3,
+        "reviews": [],
+        "num_employees": 81,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": 452006
+            },
+            {
+                "year": "2023",
+                "gross": 9496
+            },
+            {
+                "year": "2024",
+                "gross": -317349
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                55.05786063527525,
+                -6.510201156277507
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec8246195856d"
+        },
+        "name": "Biz 88",
+        "town": "Belfast",
+        "rating": 3,
+        "reviews": [],
+        "num_employees": 26,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": -422427
+            },
+            {
+                "year": "2023",
+                "gross": -242166
+            },
+            {
+                "year": "2024",
+                "gross": -409142
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                54.58346143123151,
+                -5.8928249728505495
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec8246195856e"
+        },
+        "name": "Biz 87",
+        "town": "Banbridge",
+        "rating": 4,
+        "reviews": [],
+        "num_employees": 28,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": -187483
+            },
+            {
+                "year": "2023",
+                "gross": -185058
+            },
+            {
+                "year": "2024",
+                "gross": 150433
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                54.35969165917104,
+                -6.2843838431119075
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec8246195856f"
+        },
+        "name": "Biz 90",
+        "town": "Belfast",
+        "rating": 5,
+        "reviews": [],
+        "num_employees": 35,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": -245801
+            },
+            {
+                "year": "2023",
+                "gross": -326483
+            },
+            {
+                "year": "2024",
+                "gross": 301046
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                54.63193115977564,
+                -6.01120414622657
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec82461958570"
+        },
+        "name": "Biz 95",
+        "town": "Omagh",
+        "rating": 2,
+        "reviews": [],
+        "num_employees": 15,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": 410919
+            },
+            {
+                "year": "2023",
+                "gross": 337090
+            },
+            {
+                "year": "2024",
+                "gross": -290671
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                54.58380298662997,
+                -7.291308020479192
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec82461958571"
+        },
+        "name": "Biz 96",
+        "town": "Lisburn",
+        "rating": 1,
+        "reviews": [],
+        "num_employees": 18,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": -118362
+            },
+            {
+                "year": "2023",
+                "gross": 279898
+            },
+            {
+                "year": "2024",
+                "gross": 12175
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                54.51022582856881,
+                -6.085605341366731
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec82461958572"
+        },
+        "name": "Biz 89",
+        "town": "Derry",
+        "rating": 1,
+        "reviews": [],
+        "num_employees": 52,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": 462768
+            },
+            {
+                "year": "2023",
+                "gross": 9039
+            },
+            {
+                "year": "2024",
+                "gross": -76608
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                55.00885846204661,
+                -7.299396808510727
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec82461958573"
+        },
+        "name": "Biz 97",
+        "town": "Coleraine",
+        "rating": 1,
+        "reviews": [],
+        "num_employees": 75,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": 263283
+            },
+            {
+                "year": "2023",
+                "gross": 497417
+            },
+            {
+                "year": "2024",
+                "gross": -157930
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                55.143457543018094,
+                -6.6824307015247095
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec82461958574"
+        },
+        "name": "Biz 92",
+        "town": "Newry",
+        "rating": 4,
+        "reviews": [],
+        "num_employees": 9,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": 148178
+            },
+            {
+                "year": "2023",
+                "gross": 105208
+            },
+            {
+                "year": "2024",
+                "gross": -373759
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                54.18393546665571,
+                -6.348603322387621
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec82461958575"
+        },
+        "name": "Biz 99",
+        "town": "Ballymena",
+        "rating": 5,
+        "reviews": [],
+        "num_employees": 48,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": 60903
+            },
+            {
+                "year": "2023",
+                "gross": -348139
+            },
+            {
+                "year": "2024",
+                "gross": -205986
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                54.84984568209453,
+                -6.3246878381807905
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec82461958576"
+        },
+        "name": "Biz 98",
+        "town": "Newry",
+        "rating": 5,
+        "reviews": [],
+        "num_employees": 9,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": -295571
+            },
+            {
+                "year": "2023",
+                "gross": 210700
+            },
+            {
+                "year": "2024",
+                "gross": 241232
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                54.186575021532065,
+                -6.303544435952698
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec82461958577"
+        },
+        "name": "Biz 91",
+        "town": "Banbridge",
+        "rating": 2,
+        "reviews": [],
+        "num_employees": 94,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": -348696
+            },
+            {
+                "year": "2023",
+                "gross": 285918
+            },
+            {
+                "year": "2024",
+                "gross": 326644
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                54.32805966474902,
+                -6.2740727092154245
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec82461958578"
+        },
+        "name": "Biz 94",
+        "town": "Enniskillen",
+        "rating": 5,
+        "reviews": [],
+        "num_employees": 51,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": 360001
+            },
+            {
+                "year": "2023",
+                "gross": 189550
+            },
+            {
+                "year": "2024",
+                "gross": 203656
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                54.32988609542535,
+                -7.654915811283745
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec82461958579"
+        },
+        "name": "Biz 93",
+        "town": "Ballymena",
+        "rating": 4,
+        "reviews": [],
+        "num_employees": 82,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": -346934
+            },
+            {
+                "year": "2023",
+                "gross": 30656
+            },
+            {
+                "year": "2024",
+                "gross": 359129
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                54.85085723543266,
+                -6.320331207392041
+            ]
+        }
+    },
+    {
+        "_id": {
+            "$oid": "66df1c8fcf0ec8246195857a"
+        },
+        "name": "Biz 57",
+        "town": "Omagh",
+        "rating": 5,
+        "reviews": [],
+        "num_employees": 19,
+        "profit": [
+            {
+                "year": "2022",
+                "gross": -108807
+            },
+            {
+                "year": "2023",
+                "gross": -413002
+            },
+            {
+                "year": "2024",
+                "gross": 414474
+            }
+        ],
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                54.589042639624104,
+                -7.285242401151414
+            ]
+        }
+    }
+]

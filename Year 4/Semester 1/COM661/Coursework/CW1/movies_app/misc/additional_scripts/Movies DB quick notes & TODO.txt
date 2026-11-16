@@ -1,0 +1,14 @@
+MongoDB structure:
+
+> show dbs
+
+name: moviesDB
+
+> use moviesDB
+
+> show collections
+
+collections should be:
+movies (main DB)
+users (users collection within DB, not affected by same 'users' name in bizDB)
+blacklist (token blacklist collection within DB, not affected by same 'blacklist' name in bizDB)

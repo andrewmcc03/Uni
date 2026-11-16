@@ -17,3 +17,18 @@ mongosh
 use bizDB
 
 db.biz.find()
+
+
+=============
+ALTERNATIVELY
+=============
+For moviesDB, use:
+
+mongoimport --db moviesDB --collection movies --file movies.json --jsonArray
+
+CHECK
+=====
+mongosh
+use moviesDB
+db.movies.find()
+db.movies.countDocuments()

@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12" style="margin-top: 10px;">
+      @for (business of business_list; track business.name) {
+        <div class="card text-white bg-primary mb-3">
+          <div class="card-header">
+            {{ business.name }}
+          </div>
+          <div class="card-body">
+            This business is based in {{ business.town }}
+          </div>
+          <div class="card-footer">
+            Rating: {{ business.rating }}
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-4">
+      <button class="btn btn-primary" (click) = "previousPage()">
+        Previous
+      </button>
+    </div>
+    <div class="col sm-4 text-center align-sef-center">
+      Showing page {{ this.page }} of {{ this.businessData.getLastPageNumber() }}
+    </div>
+    <div class="col-sm-4 text-end">
+      <button class="btn btn-primary" (click) = "nextPage()">
+        Next
+      </button>
+    </div>
+  </div>
+</div>
